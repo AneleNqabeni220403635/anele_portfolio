@@ -28,7 +28,7 @@ const PROJECTS = [
     tech: ["PHP", "MySQL", "JavaScript", "HTML/CSS", "REST APIs"],
     period: "Jan 2026 – Present",
     badge: "LIVE",
-    desc: "South African home services platform connecting artisans and clients — formalising the minor building works sector. Full platform: service discovery, booking flow, professional profiles, client and admin dashboards, and secure backend endpoints.",
+    desc: "South African home services platform connecting artisans and clients, formalising the minor building works sector. Full platform: service discovery, booking flow, professional profiles, client and admin dashboards, and secure backend endpoints.",
     link: "https://ikhono.africa",
   },
   {
@@ -67,7 +67,7 @@ const TIMELINE = [
     org: "iKhono",
     location: "Durban, SA · Remote",
     type: "work",
-    desc: "Leading full-stack development on iKhono — a platform formalising South Africa's minor building works and artisan services sector. Building client dashboards, booking systems, and backend integrations.",
+    desc: "Leading full-stack development on iKhono, a platform formalising South Africa's minor building works and artisan services sector. Building client dashboards, booking systems, and backend integrations.",
   },
   {
     period: "Dec 2025 – Present",
@@ -91,7 +91,7 @@ const TIMELINE = [
     org: "Plum Systems",
     location: "Bellville, Cape Town",
     type: "work",
-    desc: "Contributed to two live production commercial property platforms — API Property & Officeplace. Built frontend features with JavaScript and React, customised components via Joomla CMS, applied Bootstrap for responsive design, and shipped code through GitLab CI pipelines.",
+    desc: "Contributed to two live production commercial property platforms: API Property and Officeplace. Built frontend features with JavaScript and React, customised components via Joomla CMS, applied Bootstrap for responsive design, and shipped code through GitLab CI pipelines.",
   },
   {
     period: "Jan 2022 – Dec 2024",
@@ -255,7 +255,7 @@ function Nav() {
     }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "18px", letterSpacing: "0.25em", color: "#22d3ee" }}>AN</span>
-        <div style={{ display: "flex", gap: "32px" }}>
+        <div className="nav-links" style={{ display: "flex", gap: "32px" }}>
           {links.map((l) => (
             <button key={l} onClick={() => scroll(l)}
               style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.25em", textTransform: "uppercase", color: "#9acafc", background: "none", border: "none", cursor: "pointer", transition: "color 0.15s" }}
@@ -332,6 +332,25 @@ export default function Home() {
           text-shadow: 0 0 18px rgba(56,189,248,0.22), 0 0 54px rgba(59,130,246,0.24);
         }
         .text-sky-400 { color: #38bdf8; }
+        @media (max-width: 768px) {
+          .hero-heading { font-size: 52px !important; line-height: 1 !important; }
+          .nav-links { display: none !important; }
+          .hero-image-wrap {
+            justify-content: flex-start !important;
+            margin-top: 24px !important;
+            flex-direction: row !important;
+            gap: 16px !important;
+          }
+          .hero-image-wrap > div:first-child {
+            width: 160px !important;
+            height: 160px !important;
+          }
+          .terminal-block { display: none !important; }
+          .hero-mobile-grid {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+          }
+        }
       `}</style>
 
       <Nav />
@@ -339,21 +358,18 @@ export default function Home() {
       {/* HERO */}
       <section className="hero-grid" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "80px 0", position: "relative", overflow: "hidden", borderBottom: "1px solid rgba(34,211,238,0.12)" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", width: "100%", position: "relative", zIndex: 2 }}>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}
-            style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "28px" }}>
-            <span style={{ width: "28px", height: "1px", background: "#22d3ee" }} />
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.35em", color: "#22d3ee", textTransform: "uppercase" }}>// Junior Software Engineer</span>
-          </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.1 }}
-            style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) auto", gap: "48px", alignItems: "center" }}>
+            className="hero-mobile-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) auto", gap: "48px", alignItems: "center" }}>
+
+            {/* Left: text content */}
             <div>
               <h1 className="hero-heading glow-text">
                 ANELE<br />
                 <span className="text-sky-400">NQABENI</span>
               </h1>
               <p style={{ maxWidth: "520px", color: "#8aa0d2", fontSize: "14px", lineHeight: 1.75, fontWeight: 300, marginBottom: "32px" }}>
-                Lead Developer intern at <span style={{ color: "#cdd7ff", fontWeight: 500 }}>iKhono</span> — building the platform that formalises South Africa's artisan economy. Working remotely from Cape Town.
+                Lead Developer Intern at <span style={{ color: "#cdd7ff", fontWeight: 500 }}>iKhono</span>, building the platform that formalises South Africa's artisan economy. Working remotely from Cape Town.
               </p>
 
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "32px" }}>
@@ -377,95 +393,109 @@ export default function Home() {
               </div>
             </div>
 
-            <motion.div initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.75, delay: 0.3 }}
-  style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px", marginTop: "-60px" }}>
-  <div style={{ width: "260px", height: "260px", borderRadius: "50%", padding: "10px", background: "linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2))", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 40px 80px rgba(0,0,0,0.25)" }}>
-    <img src="/anele.jpeg" alt="Anele Nqabeni" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", background: "#0b1226" }} />
-  </div>
+            {/* Right: photo + terminal */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.75, delay: 0.3 }}
+              className="hero-image-wrap"
+              style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "24px", marginTop: "-60px" }}
+            >
+              <div style={{ width: "260px", height: "260px", borderRadius: "50%", padding: "10px", background: "linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2))", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 40px 80px rgba(0,0,0,0.25)" }}>
+                <img src="/anele.jpeg" alt="Anele Nqabeni" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", background: "#0b1226" }} />
+              </div>
 
-  {/* Terminal block */}
-  <div style={{ width: "300px", background: "#0d1117", border: "1px solid #1a2a4a", borderRadius: "12px", overflow: "hidden", boxShadow: "0 20px 60px rgba(0,0,0,0.4)" }}>
-    <div style={{ display: "flex", alignItems: "center", gap: "6px", padding: "10px 14px", background: "#161b22", borderBottom: "1px solid #1a2a4a" }}>
-      <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
-      <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#febc2e" }} />
-      <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28c840" }} />
-      <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#4a6080", marginLeft: "8px" }}>anele@ikhono ~ zsh</span>
-    </div>
-    <div style={{ padding: "16px", fontFamily: "'DM Mono', monospace", fontSize: "10px", lineHeight: 1.9 }}>
-      {[
-        ["whoami", null],
-        ["Anele Nqabeni — Lead Dev Intern @ iKhono", "output"],
-        ["ls ~/stack", null],
-        ["PHP  MySQL  React  JavaScript  C#  SQL", "output"],
-        ["cat status.txt", null],
-        ["Building real products for real people ✓", "output"],
-        ["git log --oneline -1", null],
-        ["feat: launched ikhono.africa platform", "output"],
-      ].map(([line, type], i) => (
-        <div key={i} style={{ display: "flex", gap: "8px" }}>
-          {type !== "output" && <span style={{ color: "#22d3ee", flexShrink: 0 }}>$</span>}
-          {type === "output" && <span style={{ width: "12px", flexShrink: 0 }} />}
-          <span style={{ color: type === "output" ? "#4a6080" : "#e5e5e5" }}>{line}</span>
-        </div>
-      ))}
-      <span style={{ display: "inline-block", width: "8px", height: "14px", background: "#22d3ee", marginTop: "4px", animation: "pulse 1s infinite" }} />
-    </div>
-  </div>
-</motion.div>
+              {/* Terminal block */}
+              <div className="terminal-block" style={{ width: "300px", background: "#0d1117", border: "1px solid #1a2a4a", borderRadius: "12px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "6px", padding: "10px 14px", background: "#161b22", borderBottom: "1px solid #1a2a4a", borderRadius: "12px 12px 0 0" }}>
+                  <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
+                  <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#febc2e" }} />
+                  <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28c840" }} />
+                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#4a6080", marginLeft: "8px" }}>anele@ikhono ~ zsh</span>
+                </div>
+                <div style={{ padding: "16px", fontFamily: "'DM Mono', monospace", fontSize: "10px", lineHeight: 1.9 }}>
+                  {[
+                    ["whoami", null],
+                    ["Anele Nqabeni — Lead Dev Intern @ iKhono", "output"],
+                    ["ls ~/stack", null],
+                    ["PHP  MySQL  React  JavaScript  C#  SQL", "output"],
+                    ["cat status.txt", null],
+                    ["Building real products for real people ✓", "output"],
+                    ["git log --oneline -1", null],
+                    ["feat: launched ikhono.africa platform", "output"],
+                  ].map(([line, type], i) => (
+                    <div key={i} style={{ display: "flex", gap: "8px" }}>
+                      {type !== "output" && <span style={{ color: "#22d3ee", flexShrink: 0 }}>$</span>}
+                      {type === "output" && <span style={{ width: "12px", flexShrink: 0 }} />}
+                      <span style={{ color: type === "output" ? "#4a6080" : "#e5e5e5" }}>{line}</span>
+                    </div>
+                  ))}
+                  <span style={{ display: "inline-block", width: "8px", height: "14px", background: "#22d3ee", marginTop: "4px", animation: "pulse 1s infinite" }} />
+                </div>
+              </div>
+
+            </motion.div>
+            {/* END right column */}
+
           </motion.div>
+          {/* END hero grid row */}
+
         </div>
+        {/* END maxWidth container */}
+
       </section>
+      {/* END HERO */}
 
       <Ticker />
 
       {/* ABOUT */}
-<section id="about" style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
-  <div style={{ marginBottom: "48px" }}>
-    <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "4px" }}>
-      ~/portfolio <span style={{ color: "#4a6080" }}>on</span> <span style={{ color: "#a78bfa" }}>main</span>
-    </p>
-    <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#4a6080", marginBottom: "20px" }}>
-      <span style={{ color: "#22d3ee" }}>$</span> cat about.md
-    </p>
-    <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, color: "#fff", marginBottom: "8px" }}>About Me</h2>
-    <div style={{ width: "48px", height: "2px", background: "#22d3ee" }} />
-  </div>
-
-  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "64px", alignItems: "start" }}>
-    <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-      <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-        I'm <span style={{ color: "#22d3ee", fontWeight: 600 }}>Anele Nqabeni</span>, a Junior Software Developer currently interning as Lead Developer at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>iKhono</span> in Durban, SA — building the platform that formalises South Africa's artisan economy, working remotely from Cape Town.
-      </p>
-      <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-        Day to day I work across the full stack: building PHP/MySQL backends, crafting React frontends, and shipping features that real clients depend on. Previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
-      </p>
-      <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-        I hold an Advanced Diploma in ICT Applications Development from CPUT. My drive is simple — write clean code, collaborate well, and keep improving.
-      </p>
-    </div>
-
-    <div style={{ background: "#081327", border: "1px solid #0d1a36", borderRadius: "12px", padding: "24px", fontFamily: "'DM Mono', monospace", fontSize: "12px" }}>
-      <p style={{ color: "#4a6080", marginBottom: "16px" }}>{"// anele.config.json"}</p>
-      {[
-        ["name", '"Anele Nqabeni"', "#c084fc"],
-        ["role", '"Lead Developer Intern"', "#fbbf24"],
-        ["company", '"iKhono"', "#fbbf24"],
-        ["location", '"Cape Town, ZA"', "#fbbf24"],
-        ["email", '"anele.nqabeni01@gmail.com"', "#fbbf24"],
-        ["phone", '"+27 67 876 2327"', "#fbbf24"],
-        ["status", '"open to opportunities ✓"', "#fbbf24"],
-        ["education", '"Advanced Dip. ICT — CPUT"', "#fbbf24"],
-      ].map(([k, v, color]) => (
-        <div key={k} style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "6px" }}>
-          <span style={{ color: "#c084fc" }}>{k}</span>
-          <span style={{ color: "#4a6080" }}>:</span>
-          <span style={{ color }}>{v}</span>
-          <span style={{ color: "#4a6080" }}>,</span>
+      <section id="about" style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
+        <div style={{ marginBottom: "48px" }}>
+          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "4px" }}>
+            ~/portfolio <span style={{ color: "#4a6080" }}>on</span> <span style={{ color: "#a78bfa" }}>main</span>
+          </p>
+          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#4a6080", marginBottom: "20px" }}>
+            <span style={{ color: "#22d3ee" }}>$</span> cat about.md
+          </p>
+          <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, color: "#fff", marginBottom: "8px" }}>About Me</h2>
+          <div style={{ width: "48px", height: "2px", background: "#22d3ee" }} />
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "64px", alignItems: "start" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+            <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
+              I'm <span style={{ color: "#22d3ee", fontWeight: 600 }}>Anele Nqabeni</span>, a Junior Software Developer currently interning as Lead Developer at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>iKhono</span> in Durban, SA, building the platform that formalises South Africa's artisan economy, working remotely from Cape Town.
+            </p>
+            <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
+              Day to day I work across the full stack: building PHP/MySQL backends, crafting React frontends, and shipping features that real clients depend on. Previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
+            </p>
+            <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
+              I hold an Advanced Diploma in ICT Applications Development from CPUT. My drive is simple: write clean code, collaborate well, and keep improving.
+            </p>
+          </div>
+
+          <div style={{ background: "#081327", border: "1px solid #0d1a36", borderRadius: "12px", padding: "24px", fontFamily: "'DM Mono', monospace", fontSize: "12px" }}>
+            <p style={{ color: "#4a6080", marginBottom: "16px" }}>{"// anele.config.json"}</p>
+            {[
+              ["name", '"Anele Nqabeni"', "#c084fc"],
+              ["role", '"Lead Developer Intern"', "#fbbf24"],
+              ["company", '"iKhono"', "#fbbf24"],
+              ["location", '"Cape Town, ZA"', "#fbbf24"],
+              ["email", '"anele.nqabeni01@gmail.com"', "#fbbf24"],
+              ["phone", '"+27 67 876 2327"', "#fbbf24"],
+              ["status", '"open to entry level opportunities "', "#fbbf24"],
+              ["education", '"Advanced Dip. ICT — CPUT"', "#fbbf24"],
+            ].map(([k, v, color]) => (
+              <div key={k} style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "6px" }}>
+                <span style={{ color: "#c084fc" }}>{k}</span>
+                <span style={{ color: "#4a6080" }}>:</span>
+                <span style={{ color }}>{v}</span>
+                <span style={{ color: "#4a6080" }}>,</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* SKILLS */}
       <section id="skills" style={{ background: "#081327", borderTop: "1px solid #0d1a36", borderBottom: "1px solid #0d1a36" }}>
@@ -500,7 +530,7 @@ export default function Home() {
 
         <div style={{ marginTop: "72px" }}>
           <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.3em", color: "#7b96c5", textTransform: "uppercase", marginBottom: "28px" }}>
-            — Personal & Open Source Repos
+            Personal and Open Source Repos
           </p>
           {loading ? (
             <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#7b96c5" }}>fetching repos...</p>
@@ -555,43 +585,43 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-<section id="contact" style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
-  <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "48px" }}>
-    <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.3em", color: "#22d3ee", textTransform: "uppercase", flexShrink: 0 }}>05 — Contact</span>
-    <div style={{ flex: 1, height: "1px", background: "#12213a" }} />
-  </div>
-
-  <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-    style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(32px, 5vw, 52px)", color: "#fff", marginBottom: "16px" }}>
-    Contact
-  </motion.h2>
-  <div style={{ width: "48px", height: "2px", background: "#22d3ee", marginBottom: "32px" }} />
-
-  <p style={{ color: "#8aa0d2", fontSize: "13px", lineHeight: 1.85, maxWidth: "440px", fontWeight: 300, marginBottom: "48px" }}>
-    I'm open to new opportunities, collaborations, or just a good conversation about tech. Reach out — I respond fast.
-  </p>
-
-  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
-    {[
-      { icon: "@", label: "Email", value: "anele.nqabeni01@gmail.com", href: "mailto:anele.nqabeni01@gmail.com" },
-      { icon: "⌥", label: "GitHub", value: "AneleNqabeni220403635", href: "https://github.com/AneleNqabeni220403635" },
-      { icon: "in", label: "LinkedIn", value: "anele-nqabeni-b719691aa", href: "https://www.linkedin.com/in/anele-nqabeni-b719691aa" },
-      { icon: "☎", label: "Phone", value: "+27 67 876 2327", href: "tel:+27678762327" },
-    ].map(({ icon, label, value, href }) => (
-      <a key={label} href={href}
-        target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
-        style={{ display: "flex", alignItems: "center", gap: "14px", padding: "20px", background: "#081327", border: "1px solid #0d1a36", textDecoration: "none", transition: "border-color 0.15s" }}
-        onMouseEnter={(e) => e.currentTarget.style.borderColor = "#22d3ee55"}
-        onMouseLeave={(e) => e.currentTarget.style.borderColor = "#0d1a36"}>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: "#22d3ee", width: "20px", textAlign: "center", flexShrink: 0 }}>{icon}</span>
-        <div>
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#4a6080", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "4px" }}>{label}</p>
-          <p style={{ fontSize: "12px", color: "#8aa0d2" }}>{value}</p>
+      <section id="contact" style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "48px" }}>
+          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.3em", color: "#22d3ee", textTransform: "uppercase", flexShrink: 0 }}>05 — Contact</span>
+          <div style={{ flex: 1, height: "1px", background: "#12213a" }} />
         </div>
-      </a>
-    ))}
-  </div>
-</section>
+
+        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(32px, 5vw, 52px)", color: "#fff", marginBottom: "16px" }}>
+          Contact
+        </motion.h2>
+        <div style={{ width: "48px", height: "2px", background: "#22d3ee", marginBottom: "32px" }} />
+
+        <p style={{ color: "#8aa0d2", fontSize: "13px", lineHeight: 1.85, maxWidth: "440px", fontWeight: 300, marginBottom: "48px" }}>
+          I'm open to new opportunities, collaborations, or just a good conversation about tech. Reach out and I'll respond fast.
+        </p>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
+          {[
+            { icon: "@", label: "Email", value: "anele.nqabeni01@gmail.com", href: "mailto:anele.nqabeni01@gmail.com" },
+            { icon: "⌥", label: "GitHub", value: "AneleNqabeni220403635", href: "https://github.com/AneleNqabeni220403635" },
+            { icon: "in", label: "LinkedIn", value: "anele-nqabeni-b719691aa", href: "https://www.linkedin.com/in/anele-nqabeni-b719691aa" },
+            { icon: "☎", label: "Phone", value: "+27 67 876 2327", href: "tel:+27678762327" },
+          ].map(({ icon, label, value, href }) => (
+            <a key={label} href={href}
+              target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
+              style={{ display: "flex", alignItems: "center", gap: "14px", padding: "20px", background: "#081327", border: "1px solid #0d1a36", textDecoration: "none", transition: "border-color 0.15s" }}
+              onMouseEnter={(e) => e.currentTarget.style.borderColor = "#22d3ee55"}
+              onMouseLeave={(e) => e.currentTarget.style.borderColor = "#0d1a36"}>
+              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: "#22d3ee", width: "20px", textAlign: "center", flexShrink: 0 }}>{icon}</span>
+              <div>
+                <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#4a6080", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "4px" }}>{label}</p>
+                <p style={{ fontSize: "12px", color: "#8aa0d2" }}>{value}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
 
       {/* FOOTER */}
       <footer style={{ borderTop: "1px solid #0d1a36", padding: "28px 24px" }}>
