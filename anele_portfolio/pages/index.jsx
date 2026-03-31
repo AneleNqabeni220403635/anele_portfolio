@@ -264,7 +264,7 @@ function Nav() {
             >{l}</button>
           ))}
         </div>
-        <a href="/Anele-Nqabeni-Resume.pdf" download style={{
+        <a href="/Anele-Nqabeni-Resume.pdf.pdf" download style={{
           fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.2em", textTransform: "uppercase",
           padding: "8px 16px", border: "1px solid rgba(34,211,238,0.4)", color: "#22d3ee",
           textDecoration: "none", transition: "all 0.2s",
@@ -377,7 +377,7 @@ export default function Home() {
                   style={{ padding: "13px 28px", background: "#7dd3fc", color: "#020617", fontSize: "10px", fontFamily: "'DM Mono', monospace", letterSpacing: "0.18em", textTransform: "uppercase", border: "none", cursor: "pointer", fontWeight: 500 }}>
                   View Work
                 </button>
-                <a href="/Anele-Nqabeni-Resume.pdf" download
+                <a href="/Anele-Nqabeni-Resume.pdf.pdf" download
                   style={{ padding: "13px 28px", background: "transparent", color: "#9ecbff", fontSize: "10px", fontFamily: "'DM Mono', monospace", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(125,211,252,0.3)", cursor: "pointer", textDecoration: "none", display: "inline-block" }}>
                   Download CV
                 </a>
