@@ -485,7 +485,7 @@ export default function Home() {
                 gap: "10px",
               }}>
                 <span style={{ width: "28px", height: "1px", background: "#22d3ee", display: "inline-block" }} />
-                Software Developer
+                Junior Software Developer
                 <span style={{ width: "28px", height: "1px", background: "#22d3ee", display: "inline-block" }} />
               </p>
               <p style={{ maxWidth: "520px", color: "#8aa0d2", fontSize: "14px", lineHeight: 1.75, fontWeight: 300, marginBottom: "32px" }}>
