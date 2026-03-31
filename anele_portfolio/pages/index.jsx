@@ -320,7 +320,9 @@ function Nav() {
       backdropFilter: scrolled ? "blur(18px)" : "none",
     }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "18px", letterSpacing: "0.25em", color: "#22d3ee" }}>AN</span>
+        <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "18px", letterSpacing: "0.25em", color: "#22d3ee" }}>
+          AN<span style={{ color: "#ffffff", opacity: 0.35 }}>.</span><span style={{ color: "#ffffff", fontSize: "14px", letterSpacing: "0.15em", opacity: 0.7 }}>dev</span>
+        </span>
         <div className="nav-links" style={{ display: "flex", gap: "32px" }}>
           {links.map((l) => (
             <button key={l} onClick={() => scroll(l)}
