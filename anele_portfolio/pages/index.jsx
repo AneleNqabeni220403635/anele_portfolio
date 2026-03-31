@@ -447,9 +447,38 @@ export default function Home() {
             {/* Left: text content */}
             <div>
               <h1 className="hero-heading glow-text">
+                <span style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "clamp(18px, 2.5vw, 26px)",
+                  fontWeight: 300,
+                  color: "#8aa0d2",
+                  letterSpacing: "0.05em",
+                  display: "block",
+                  marginBottom: "8px",
+                  textTransform: "none",
+                }}>
+                  Hi, I'm
+                </span>
                 ANELE<br />
                 <span className="text-sky-400">NQABENI</span>
               </h1>
+
+              {/* Subheading */}
+              <p style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: "11px",
+                letterSpacing: "0.35em",
+                textTransform: "uppercase",
+                color: "#22d3ee",
+                marginBottom: "24px",
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+              }}>
+                <span style={{ width: "28px", height: "1px", background: "#22d3ee", display: "inline-block" }} />
+                Software Developer
+                <span style={{ width: "28px", height: "1px", background: "#22d3ee", display: "inline-block" }} />
+              </p>
               <p style={{ maxWidth: "520px", color: "#8aa0d2", fontSize: "14px", lineHeight: 1.75, fontWeight: 300, marginBottom: "32px" }}>
                 Lead Developer Intern at <span style={{ color: "#cdd7ff", fontWeight: 500 }}>iKhono</span>, building the platform that formalises South Africa's artisan economy. Working remotely from Cape Town.
               </p>
@@ -689,7 +718,7 @@ export default function Home() {
             © {new Date().getFullYear()} Anele Nqabeni · Cape Town, SA
           </span>
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", letterSpacing: "0.2em", color: "#162d57", textTransform: "uppercase" }}>
-            Built with Next.js · Deployed on Netlify
+            · Deployed by Anele Nqabeni
           </span>
         </div>
       </footer>
