@@ -70,7 +70,7 @@ const TIMELINE = [
     desc: "Leading full-stack development on iKhono, a platform formalising South Africa's minor building works and artisan services sector. Building client dashboards, booking systems, and backend integrations.",
   },
   {
-    period: "Dec 2025 – Present",
+    period: "Jan 2025 – Present",
     role: "Full Stack Developer",
     org: "Metrolink",
     location: "Cape Town · Startup",
