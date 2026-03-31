@@ -321,7 +321,14 @@ function Nav() {
     }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "18px", letterSpacing: "0.25em", color: "#22d3ee" }}>
-          AN<span style={{ color: "#ffffff", opacity: 0.35 }}>.</span><span style={{ color: "#ffffff", fontSize: "14px", letterSpacing: "0.15em", opacity: 0.7 }}>dev</span>
+          AN<span style={{ color: "#ffffff", opacity: 0.35 }}>.</span><span style={{
+            fontFamily: "'DM Mono', monospace",
+            fontSize: "13px",
+            letterSpacing: "0.1em",
+            color: "#ffffff",
+            opacity: 0.5,
+            fontWeight: 400
+          }}>dev</span>
         </span>
         <div className="nav-links" style={{ display: "flex", gap: "32px" }}>
           {links.map((l) => (
@@ -717,7 +724,7 @@ export default function Home() {
       <footer style={{ borderTop: "1px solid #0d1a36", padding: "28px 24px" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "10px" }}>
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", letterSpacing: "0.2em", color: "#1e2a4b", textTransform: "uppercase" }}>
-            © {new Date().getFullYear()} Anele Nqabeni · Cape Town, SA
+            © {new Date().getFullYear()} Anele Nqabeni · Cape Town, South Africa
           </span>
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", letterSpacing: "0.2em", color: "#162d57", textTransform: "uppercase" }}>
             · Deployed by Anele Nqabeni
