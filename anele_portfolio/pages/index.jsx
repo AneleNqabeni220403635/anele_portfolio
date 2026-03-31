@@ -34,7 +34,7 @@ const PROJECTS = [
   {
     name: "Metrolink",
     index: "02",
-    tech: ["C# .NET", "React Native", "Expo", "Railway"],
+    tech: ["C# .NET", "React Native", "Expo", "Railway", "REST APIs"],
     period: "2025",
     badge: "STARTUP",
     desc: "Startup project with a C# .NET backend deployed on Railway and a React Native (Expo) mobile frontend. Contributed to backend API architecture and mobile integration.",
@@ -467,7 +467,9 @@ export default function Home() {
               I'm <span style={{ color: "#22d3ee", fontWeight: 600 }}>Anele Nqabeni</span>, a Junior Software Developer currently interning as Lead Developer at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>iKhono</span> in Durban, SA, building the platform that formalises South Africa's artisan economy, working remotely from Cape Town.
             </p>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-              Day to day I work across the full stack: building PHP/MySQL backends, crafting React frontends, and shipping features that real clients depend on. Previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
+              <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
+                Day to day I work across the full stack at iKhono: building PHP/MySQL backends, shipping features that real clients depend on, and crafting React frontends at Metrolink. Previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
+              </p>
             </p>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
               I hold an Advanced Diploma in ICT Applications Development from CPUT. My drive is simple: write clean code, collaborate well, and keep improving.
