@@ -71,7 +71,7 @@ const TIMELINE = [
   },
   {
     period: "Dec 2025 – Present",
-    role: "Software Developer",
+    role: "Full Stack Developer",
     org: "Metrolink",
     location: "Cape Town · Startup",
     type: "work",
@@ -111,6 +111,68 @@ const TIMELINE = [
   },
 ];
 
+// ── Typewriter ─────────────────────────────────────────────────────────────
+function Typewriter({ lines, speed = 38 }) {
+  const [displayed, setDisplayed] = useState([]);
+  const [lineIdx, setLineIdx] = useState(0);
+  const [charIdx, setCharIdx] = useState(0);
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    if (lineIdx >= lines.length) { setDone(true); return; }
+    if (charIdx <= lines[lineIdx].length) {
+      const t = setTimeout(() => {
+        setDisplayed((prev) => {
+          const next = [...prev];
+          next[lineIdx] = lines[lineIdx].slice(0, charIdx);
+          return next;
+        });
+        setCharIdx((c) => c + 1);
+      }, speed);
+      return () => clearTimeout(t);
+    } else {
+      const t = setTimeout(() => { setLineIdx((l) => l + 1); setCharIdx(0); }, 320);
+      return () => clearTimeout(t);
+    }
+  }, [lineIdx, charIdx, lines, speed]);
+
+  return (
+    <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", lineHeight: 1.9 }}>
+      {lines.map((line, i) => (
+        <div key={i} style={{ display: "flex", gap: "8px", minHeight: "18px" }}>
+          {(i < lineIdx || (i === lineIdx && charIdx > 0)) && (
+            <>
+              {i % 2 === 0 ? (
+                <span style={{ color: "#22d3ee", flexShrink: 0 }}>$</span>
+              ) : (
+                <span style={{ width: "12px", flexShrink: 0 }} />
+              )}
+              <span style={{ color: i % 2 === 0 ? "#e5e5e5" : "#4a6080" }}>
+                {displayed[i] ?? ""}
+              </span>
+              {i === lineIdx && !done && (
+                <span style={{
+                  display: "inline-block", width: "8px", height: "12px",
+                  background: "#22d3ee", marginLeft: "2px",
+                  animation: "blink 1s step-end infinite"
+                }} />
+              )}
+            </>
+          )}
+        </div>
+      ))}
+      {done && (
+        <span style={{
+          display: "inline-block", width: "8px", height: "12px",
+          background: "#22d3ee", marginTop: "4px",
+          animation: "blink 1s step-end infinite"
+        }} />
+      )}
+    </div>
+  );
+}
+
+// ── Ticker ─────────────────────────────────────────────────────────────────
 function Ticker() {
   const repeated = [...TICKER_TAGS, ...TICKER_TAGS, ...TICKER_TAGS];
   return (
@@ -130,6 +192,7 @@ function Ticker() {
   );
 }
 
+// ── Skill bar ──────────────────────────────────────────────────────────────
 function SkillBar({ name, level }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
@@ -151,6 +214,7 @@ function SkillBar({ name, level }) {
   );
 }
 
+// ── Repo card ──────────────────────────────────────────────────────────────
 function RepoCard({ r }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -192,6 +256,7 @@ function RepoCard({ r }) {
   );
 }
 
+// ── Project card ───────────────────────────────────────────────────────────
 function ProjectCard({ project, index }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -234,6 +299,7 @@ function ProjectCard({ project, index }) {
   );
 }
 
+// ── Nav ────────────────────────────────────────────────────────────────────
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -277,6 +343,7 @@ function Nav() {
   );
 }
 
+// ── App ────────────────────────────────────────────────────────────────────
 export default function Home() {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -299,6 +366,17 @@ export default function Home() {
     return () => { ignore = true; };
   }, []);
 
+  const terminalLines = [
+    "whoami",
+    "Anele Nqabeni — Lead Dev Intern @ iKhono",
+    "ls ~/stack",
+    "PHP  MySQL  React  JavaScript  C#  SQL",
+    "cat status.txt",
+    "Building real products for real people ✓",
+    "git log --oneline -1",
+    "feat: launched ikhono.africa platform",
+  ];
+
   return (
     <div style={{ background: "#040b1c", color: "#e5e5e5", minHeight: "100vh" }}>
       <style>{`
@@ -307,6 +385,10 @@ export default function Home() {
         body { font-family: 'DM Sans', sans-serif; background: #040b1c; color: #e5e5e5; }
         html { scroll-behavior: smooth; }
         ::selection { background: #22d3ee; color: #000; }
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
         body::after {
           content: '';
           position: fixed; inset: 0;
@@ -355,7 +437,7 @@ export default function Home() {
 
       <Nav />
 
-      {/* HERO */}
+      {/* ── HERO ── */}
       <section className="hero-grid" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "80px 0", position: "relative", overflow: "hidden", borderBottom: "1px solid rgba(34,211,238,0.12)" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", width: "100%", position: "relative", zIndex: 2 }}>
 
@@ -405,7 +487,7 @@ export default function Home() {
                 <img src="/anele.jpeg" alt="Anele Nqabeni" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", background: "#0b1226" }} />
               </div>
 
-              {/* Terminal block */}
+              {/* Terminal block with typewriter */}
               <div className="terminal-block" style={{ width: "300px", background: "#0d1117", border: "1px solid #1a2a4a", borderRadius: "12px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "6px", padding: "10px 14px", background: "#161b22", borderBottom: "1px solid #1a2a4a", borderRadius: "12px 12px 0 0" }}>
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
@@ -413,42 +495,19 @@ export default function Home() {
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28c840" }} />
                   <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#4a6080", marginLeft: "8px" }}>anele@ikhono ~ zsh</span>
                 </div>
-                <div style={{ padding: "16px", fontFamily: "'DM Mono', monospace", fontSize: "10px", lineHeight: 1.9 }}>
-                  {[
-                    ["whoami", null],
-                    ["Anele Nqabeni — Lead Dev Intern @ iKhono", "output"],
-                    ["ls ~/stack", null],
-                    ["PHP  MySQL  React  JavaScript  C#  SQL", "output"],
-                    ["cat status.txt", null],
-                    ["Building real products for real people ✓", "output"],
-                    ["git log --oneline -1", null],
-                    ["feat: launched ikhono.africa platform", "output"],
-                  ].map(([line, type], i) => (
-                    <div key={i} style={{ display: "flex", gap: "8px" }}>
-                      {type !== "output" && <span style={{ color: "#22d3ee", flexShrink: 0 }}>$</span>}
-                      {type === "output" && <span style={{ width: "12px", flexShrink: 0 }} />}
-                      <span style={{ color: type === "output" ? "#4a6080" : "#e5e5e5" }}>{line}</span>
-                    </div>
-                  ))}
-                  <span style={{ display: "inline-block", width: "8px", height: "14px", background: "#22d3ee", marginTop: "4px", animation: "pulse 1s infinite" }} />
+                <div style={{ padding: "16px", minHeight: "160px" }}>
+                  <Typewriter lines={terminalLines} speed={36} />
                 </div>
               </div>
 
             </motion.div>
-            {/* END right column */}
-
           </motion.div>
-          {/* END hero grid row */}
-
         </div>
-        {/* END maxWidth container */}
-
       </section>
-      {/* END HERO */}
 
       <Ticker />
 
-      {/* ABOUT */}
+      {/* ── ABOUT ── */}
       <section id="about" style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
         <div style={{ marginBottom: "48px" }}>
           <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "4px" }}>
@@ -467,9 +526,7 @@ export default function Home() {
               I'm <span style={{ color: "#22d3ee", fontWeight: 600 }}>Anele Nqabeni</span>, a Junior Software Developer currently interning as Lead Developer at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>iKhono</span> in Durban, SA, building the platform that formalises South Africa's artisan economy, working remotely from Cape Town.
             </p>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-              <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-                Day to day I work across the full stack at iKhono: building PHP/MySQL backends, shipping features that real clients depend on, and crafting React frontends at Metrolink. Previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
-              </p>
+              Day to day I work across the full stack at iKhono: building PHP/MySQL backends, shipping features that real clients depend on, and crafting React frontends at Metrolink. Previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
             </p>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
               I hold an Advanced Diploma in ICT Applications Development from CPUT. My drive is simple: write clean code, collaborate well, and keep improving.
@@ -485,7 +542,7 @@ export default function Home() {
               ["location", '"Cape Town, ZA"', "#fbbf24"],
               ["email", '"anele.nqabeni01@gmail.com"', "#fbbf24"],
               ["phone", '"+27 67 876 2327"', "#fbbf24"],
-              ["status", '"open to entry level opportunities "', "#fbbf24"],
+              ["status", '"open to entry level opportunities"', "#fbbf24"],
               ["education", '"Advanced Dip. ICT — CPUT"', "#fbbf24"],
             ].map(([k, v, color]) => (
               <div key={k} style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "6px" }}>
@@ -499,7 +556,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SKILLS */}
+      {/* ── SKILLS ── */}
       <section id="skills" style={{ background: "#081327", borderTop: "1px solid #0d1a36", borderBottom: "1px solid #0d1a36" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "64px" }}>
@@ -520,7 +577,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROJECTS */}
+      {/* ── PROJECTS ── */}
       <section id="projects" style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "64px" }}>
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.3em", color: "#22d3ee", textTransform: "uppercase", flexShrink: 0 }}>03 — Projects</span>
@@ -554,7 +611,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TIMELINE */}
+      {/* ── TIMELINE ── */}
       <section id="timeline" style={{ background: "#081327", borderTop: "1px solid #0d1a36", borderBottom: "1px solid #0d1a36" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "64px" }}>
@@ -586,7 +643,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* ── CONTACT ── */}
       <section id="contact" style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "48px" }}>
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.3em", color: "#22d3ee", textTransform: "uppercase", flexShrink: 0 }}>05 — Contact</span>
@@ -625,7 +682,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* ── FOOTER ── */}
       <footer style={{ borderTop: "1px solid #0d1a36", padding: "28px 24px" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "10px" }}>
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", letterSpacing: "0.2em", color: "#1e2a4b", textTransform: "uppercase" }}>
