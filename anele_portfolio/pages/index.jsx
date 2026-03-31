@@ -37,7 +37,7 @@ const PROJECTS = [
     tech: ["C# .NET", "React Native", "Expo", "Railway", "REST APIs"],
     period: "2025",
     badge: "STARTUP",
-    desc: "Startup project with a C# .NET backend deployed on Railway and a React Native (Expo) mobile frontend. Contributed to backend API architecture and mobile integration.",
+    desc: "Actively contributing to the Metrolink startup. Building and optimising backend APIs using C# .NET on Railway, while integrating with a React Native (Expo) mobile frontend.",
     link: null,
   },
   {
