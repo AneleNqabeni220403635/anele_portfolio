@@ -522,7 +522,7 @@ export default function Home() {
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#febc2e" }} />
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28c840" }} />
-                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#4a6080", marginLeft: "8px" }}>anele@ikhono ~ zsh</span>
+                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#4a6080", marginLeft: "8px" }}>anele@ikhono.africa ~ zsh</span>
                 </div>
                 <div style={{ padding: "16px", minHeight: "160px" }}>
                   <Typewriter lines={terminalLines} speed={36} />
