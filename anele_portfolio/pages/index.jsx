@@ -75,7 +75,7 @@ const TIMELINE = [
     org: "Metrolink",
     location: "Cape Town · Startup",
     type: "work",
-    desc: "Contributed to Metrolink startup project. Built backend APIs using C# .NET deployed on Railway, and integrated with a React Native (Expo) mobile frontend.",
+    desc: "Actively contributing to the Metrolink startup. Building and optimising backend APIs using C# .NET on Railway, while integrating with a React Native (Expo) mobile frontend.",
   },
   {
     period: "Jan 2025 – Dec 2025",
