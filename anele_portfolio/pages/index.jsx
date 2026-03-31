@@ -35,7 +35,7 @@ const PROJECTS = [
     name: "Metrolink",
     index: "02",
     tech: ["C# .NET", "React Native", "Expo", "Railway", "REST APIs"],
-    period: "2025",
+    period: "Jan 2026 – Present",
     badge: "STARTUP",
     desc: "Actively contributing to the Metrolink startup. Building and optimising backend APIs using C# .NET on Railway, while integrating with a React Native (Expo) mobile frontend.",
     link: null,
