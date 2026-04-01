@@ -9,15 +9,15 @@ const SKILLS = [
   { name: "PHP / MySQL", level: 85 },
   { name: "SQL", level: 82 },
   { name: "React / React Native", level: 80 },
-  { name: "C# / .NET", level: 72 },
-  { name: "Java / Spring Boot", level: 68 },
+  { name: "C# / .NET / PostgreSQL" , level: 78 },
+  { name: "Java / Spring Boot", level: 70 },
   { name: "Python", level: 65 },
 ];
 
 const TICKER_TAGS = [
-  "React", "PHP", "MySQL", "JavaScript", "C# .NET", "React Native",
+  "React", "PHP", "PostgreSQL", "JavaScript", "C# .NET", "React Native",
   "Expo", "Railway", "REST APIs", "Git", "GitLab", "FileZilla",
-  "Bootstrap", "Joomla", "KonsoleH", "Apache", "SQL", "Java", "Spring Boot", "Python",
+  "Bootstrap", "Joomla", "KonsoleH", "Apache", "MySQL", "Java", "Spring Boot", "Python",
   "HTML5", "CSS3", "VS Code", "Tailwind",
 ];
 
@@ -34,25 +34,25 @@ const PROJECTS = [
   {
     name: "Metrolink",
     index: "02",
-    tech: ["C# .NET", "React Native", "Expo", "Railway", "REST APIs"],
+    tech: ["C# .NET","PostgreSQL", "React Native", "Expo", "Railway", "REST APIs"],
     period: "Jan 2026 – Present",
     badge: "STARTUP",
-    desc: "Actively contributing to the Metrolink startup. Building and optimising backend APIs using C# .NET on Railway, while integrating with a React Native (Expo) mobile frontend.",
+    desc: "A Cape Town transit intelligence platform unifying MyCiTi, Metrorail, and Golden Arrow schedules with crowdsourced delay reporting - built on demo APIs as early development, with live agency integration on the roadmap.",
     link: null,
   },
   {
     name: "API Property",
     index: "03",
-    tech: ["React", "Joomla", "JavaScript", "Bootstrap", "GitLab"],
+    tech: ["React", "Joomla", "JavaScript", "Bootstrap","MySQL", "GitLab"],
     period: "Jul 2024 – Jul 2025",
     badge: "PRODUCTION",
-    desc: "Commercial and industrial property management platform at Plum Systems. Frontend features, UI consistency, responsive design, and GitLab-based deployment pipeline.",
+    desc: "Commercial and industrial property management platform at Plum Systems. Frontend features, UI consistency, responsive design, and GitLab based deployment pipeline.",
     link: null,
   },
   {
     name: "Officeplace",
     index: "04",
-    tech: ["React", "Node.js", "SQL", "Firebase"],
+    tech: ["React", "Node.js", "MySQL", "Firebase"],
     period: "Jul 2024 – Jul 2025",
     badge: "PRODUCTION",
     desc: "Office space management platform at Plum Systems. Contributed to data migration, backend integration, and ongoing live production support.",
@@ -63,17 +63,17 @@ const PROJECTS = [
 const TIMELINE = [
   {
     period: "Jan 2026 – Present",
-    role: "Lead Developer Intern",
+    role: "Lead Developer Intern (Full Stack)",
     org: "iKhono",
-    location: "Durban, SA · Remote",
+    location: "Durban, South Africa · Remote",
     type: "work",
-    desc: "Leading full-stack development on iKhono, a platform formalising South Africa's minor building works and artisan services sector. Building client dashboards, booking systems, and backend integrations.",
+    desc: "Leading full stack development on iKhono, a platform formalising South Africa's minor building works and artisan services sector. Building client dashboards, booking systems, and backend integrations.",
   },
   {
-    period: "Jan 2025 – Present",
+    period: "Jan 2026 – Present",
     role: "Full Stack Developer",
     org: "Metrolink",
-    location: "Cape Town · Startup",
+    location: "Cape Town · Startup · Early Development",
     type: "work",
     desc: "Actively contributing to the Metrolink startup. Building and optimising backend APIs using C# .NET on Railway, while integrating with a React Native (Expo) mobile frontend.",
   },
@@ -504,7 +504,7 @@ export default function Home() {
               </div>
 
               <div style={{ display: "flex", gap: "36px", flexWrap: "wrap" }}>
-                {[["1+", "Years Exp."], ["4", "Projects"], ["8+", "Languages"]].map(([val, label]) => (
+                {[["1+", "Years Exp."], ["4", "Projects"], ["8+", "Programming Languages"]].map(([val, label]) => (
                   <div key={label} style={{ textAlign: "right" }}>
                     <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "44px", lineHeight: 1, color: "#22d3ee" }}>{val}</p>
                     <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", letterSpacing: "0.22em", color: "#9ecbff", textTransform: "uppercase", marginTop: "4px" }}>{label}</p>
