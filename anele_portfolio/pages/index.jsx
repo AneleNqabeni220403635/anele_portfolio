@@ -9,7 +9,7 @@ const SKILLS = [
   { name: "PHP / MySQL", level: 85 },
   { name: "SQL", level: 82 },
   { name: "React / React Native", level: 80 },
-  { name: "C# / .NET / PostgreSQL" , level: 78 },
+  { name: "C# / .NET / PostgreSQL", level: 78 },
   { name: "Java / Spring Boot", level: 70 },
   { name: "Python", level: 65 },
 ];
@@ -34,7 +34,7 @@ const PROJECTS = [
   {
     name: "Metrolink",
     index: "02",
-    tech: ["C# .NET","PostgreSQL", "React Native", "Expo", "Railway", "REST APIs"],
+    tech: ["C# .NET", "PostgreSQL", "React Native", "Expo", "Railway", "REST APIs"],
     period: "Jan 2026 – Present",
     badge: "STARTUP",
     desc: "A Cape Town transit intelligence platform unifying MyCiTi, Metrorail, and Golden Arrow schedules with crowdsourced delay reporting - built on demo APIs as early development, with live agency integration on the roadmap.",
@@ -43,7 +43,7 @@ const PROJECTS = [
   {
     name: "API Property",
     index: "03",
-    tech: ["React", "Joomla", "JavaScript", "Bootstrap","MySQL", "GitLab"],
+    tech: ["React", "Joomla", "JavaScript", "Bootstrap", "MySQL", "GitLab"],
     period: "Jul 2024 – Jul 2025",
     badge: "PRODUCTION",
     desc: "Commercial and industrial property management platform at Plum Systems. Frontend features, UI consistency, responsive design, and GitLab based deployment pipeline.",
@@ -379,7 +379,7 @@ export default function Home() {
     "whoami",
     "Anele Nqabeni — Lead Dev Intern @ iKhono",
     "ls ~/stack",
-    "PHP  MySQL  React  JavaScript  C#  SQL",
+    "PHP  MySQL  React  JavaScript  C#  PostgreSQL",
     "cat status.txt",
     "Building real products for real people ✓",
     "git log --oneline -1",
