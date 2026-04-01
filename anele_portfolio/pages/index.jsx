@@ -423,29 +423,96 @@ export default function Home() {
           text-shadow: 0 0 18px rgba(56,189,248,0.22), 0 0 54px rgba(59,130,246,0.24);
         }
         .text-sky-400 { color: #38bdf8; }
+
+        /* ── Desktop: side-by-side grid ── */
+        .hero-mobile-grid {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          gap: 48px;
+          align-items: center;
+        }
+
+        /* Desktop right column: photo on top, terminal below, centred */
+        .hero-image-wrap {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 24px;
+          margin-top: -60px;
+        }
+
+        /* Desktop photo size */
+        .hero-photo-ring {
+          width: 260px;
+          height: 260px;
+          border-radius: 50%;
+          padding: 10px;
+          background: linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2));
+          border: 1px solid rgba(255,255,255,0.08);
+          box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+          flex-shrink: 0;
+        }
+
+        /* Desktop terminal width */
+        .terminal-block {
+          width: 300px;
+          background: #0d1117;
+          border: 1px solid #1a2a4a;
+          border-radius: 12px;
+        }
+
+        /* ── Nav hidden on mobile ── */
         @media (max-width: 768px) {
-          .hero-heading { font-size: 52px !important; line-height: 1 !important; }
           .nav-links { display: none !important; }
-          .hero-image-wrap {
-            justify-content: flex-start !important;
-            margin-top: 24px !important;
-            flex-direction: row !important;
-            gap: 16px !important;
-            align-items: flex-start !important;
-          }
-          .hero-image-wrap > div:first-child {
-            width: 160px !important;
-            height: 160px !important;
-          }
-          .terminal-block {
-            display: block !important;
-            width: 100% !important;
-            max-width: 220px !important;
-          }
+
+          .hero-heading { font-size: 52px !important; line-height: 1 !important; }
+
+          /*
+           * Mobile hero: left column is the full-width text block.
+           * Right column disappears from the grid — photo + terminal
+           * are repositioned inside the left column via .mobile-photo-row
+           * and .mobile-terminal-full.
+           */
           .hero-mobile-grid {
             grid-template-columns: 1fr !important;
             gap: 24px !important;
           }
+
+          /* Hide the desktop right column entirely on mobile */
+          .hero-image-wrap {
+            display: none !important;
+          }
+
+          /* Show mobile-only elements */
+          .mobile-photo-row {
+            display: flex !important;
+          }
+          .mobile-terminal-full {
+            display: block !important;
+          }
+        }
+
+        /* Hide desktop heading on mobile (replaced by mobile-photo-row heading) */
+        @media (max-width: 768px) {
+          .desktop-heading { display: none !important; }
+        }
+
+        /* These are mobile-only elements — hidden on desktop */
+        .mobile-photo-row {
+          display: none;
+          align-items: center;
+          gap: 16px;
+          margin-bottom: 20px;
+        }
+
+        .mobile-terminal-full {
+          display: none;
+          width: 100%;
+          background: #0d1117;
+          border: 1px solid #1a2a4a;
+          border-radius: 12px;
+          margin-bottom: 28px;
         }
       `}</style>
 
@@ -456,11 +523,49 @@ export default function Home() {
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", width: "100%", position: "relative", zIndex: 2 }}>
 
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.1 }}
-            className="hero-mobile-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) auto", gap: "48px", alignItems: "center" }}>
+            className="hero-mobile-grid">
 
             {/* Left: text content */}
             <div>
-              <h1 className="hero-heading glow-text">
+
+              {/* ── MOBILE ONLY: photo (top-right) + heading row ── */}
+              <div className="mobile-photo-row">
+                {/* Heading takes remaining space */}
+                <div style={{ flex: 1 }}>
+                  <h1 className="hero-heading glow-text" style={{ marginBottom: 0 }}>
+                    <span style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "18px",
+                      fontWeight: 300,
+                      color: "#8aa0d2",
+                      letterSpacing: "0.05em",
+                      display: "block",
+                      marginBottom: "6px",
+                      textTransform: "none",
+                    }}>
+                      Hi, I'm
+                    </span>
+                    ANELE<br />
+                    <span className="text-sky-400">NQABENI</span>
+                  </h1>
+                </div>
+                {/* Photo sits top-right */}
+                <div style={{
+                  width: "120px",
+                  height: "120px",
+                  borderRadius: "50%",
+                  padding: "6px",
+                  background: "linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2))",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+                  flexShrink: 0,
+                }}>
+                  <img src="/anele.jpeg" alt="Anele Nqabeni" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", background: "#0b1226" }} />
+                </div>
+              </div>
+
+              {/* ── Desktop-only heading (hidden on mobile via the photo row above) ── */}
+              <h1 className="hero-heading glow-text desktop-heading">
                 <span style={{
                   fontFamily: "'DM Sans', sans-serif",
                   fontSize: "clamp(18px, 2.5vw, 26px)",
@@ -497,6 +602,19 @@ export default function Home() {
                 Lead Developer Intern at <span style={{ color: "#cdd7ff", fontWeight: 500 }}>iKhono</span>, building the platform that formalises South Africa's artisan economy. Working remotely from Cape Town.
               </p>
 
+              {/* ── MOBILE ONLY: terminal card fills the block ── */}
+              <div className="mobile-terminal-full">
+                <div style={{ display: "flex", alignItems: "center", gap: "6px", padding: "10px 14px", background: "#161b22", borderBottom: "1px solid #1a2a4a", borderRadius: "12px 12px 0 0" }}>
+                  <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
+                  <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#febc2e" }} />
+                  <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28c840" }} />
+                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#4a6080", marginLeft: "8px" }}>anele@ikhono.africa ~ zsh</span>
+                </div>
+                <div style={{ padding: "16px", minHeight: "160px" }}>
+                  <Typewriter lines={terminalLines} speed={36} />
+                </div>
+              </div>
+
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "32px" }}>
                 <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
                   style={{ padding: "13px 28px", background: "#7dd3fc", color: "#020617", fontSize: "10px", fontFamily: "'DM Mono', monospace", letterSpacing: "0.18em", textTransform: "uppercase", border: "none", cursor: "pointer", fontWeight: 500 }}>
@@ -518,20 +636,19 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: photo + terminal */}
+            {/* Right: photo + terminal — desktop only */}
             <motion.div
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.75, delay: 0.3 }}
               className="hero-image-wrap"
-              style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "24px", marginTop: "-60px" }}
             >
-              <div style={{ width: "260px", height: "260px", borderRadius: "50%", padding: "10px", background: "linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2))", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 40px 80px rgba(0,0,0,0.25)" }}>
+              <div className="hero-photo-ring">
                 <img src="/anele.jpeg" alt="Anele Nqabeni" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", background: "#0b1226" }} />
               </div>
 
-              {/* Terminal block with typewriter */}
-              <div className="terminal-block" style={{ width: "300px", background: "#0d1117", border: "1px solid #1a2a4a", borderRadius: "12px" }}>
+              {/* Terminal block */}
+              <div className="terminal-block">
                 <div style={{ display: "flex", alignItems: "center", gap: "6px", padding: "10px 14px", background: "#161b22", borderBottom: "1px solid #1a2a4a", borderRadius: "12px 12px 0 0" }}>
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#febc2e" }} />
