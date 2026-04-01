@@ -431,12 +431,17 @@ export default function Home() {
             margin-top: 24px !important;
             flex-direction: row !important;
             gap: 16px !important;
+            align-items: flex-start !important;
           }
           .hero-image-wrap > div:first-child {
             width: 160px !important;
             height: 160px !important;
           }
-          .terminal-block { display: none !important; }
+          .terminal-block {
+            display: block !important;
+            width: 100% !important;
+            max-width: 220px !important;
+          }
           .hero-mobile-grid {
             grid-template-columns: 1fr !important;
             gap: 24px !important;
