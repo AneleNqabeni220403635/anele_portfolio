@@ -561,7 +561,7 @@ export default function Home() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "64px", alignItems: "start" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-              I'm <span style={{ color: "#22d3ee", fontWeight: 600 }}>Anele Nqabeni</span>, a Junior Software Developer currently interning as Lead Developer at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>iKhono</span> in Durban, SA, building the platform that formalises South Africa's artisan economy, working remotely from Cape Town.
+              I'm <span style={{ color: "#22d3ee", fontWeight: 600 }}>Anele Nqabeni</span>, a Junior Software Developer currently interning as Lead Developer at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>iKhono</span> in Durban, South Africa, building the platform that formalises South Africa's artisan economy, working remotely from Cape Town.
             </p>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
               Day to day I work across the full stack at iKhono: building PHP/MySQL backends, shipping features that real clients depend on, and crafting React frontends at Metrolink. Previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
