@@ -398,6 +398,11 @@ export default function Home() {
           0%, 100% { opacity: 1; }
           50% { opacity: 0; }
         }
+          @keyframes float {
+             0%   { transform: translateY(0px); }
+             50%  { transform: translateY(-12px); }
+             100% { transform: translateY(0px); }
+        }
         body::after {
           content: '';
           position: fixed; inset: 0;
@@ -566,6 +571,7 @@ export default function Home() {
                   border: "1px solid rgba(255,255,255,0.08)",
                   boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
                   flexShrink: 0,
+                  animation: "float 3s ease-in-out infinite",
                 }}>
                   <img
                     src="/anele.jpeg"
@@ -674,6 +680,9 @@ export default function Home() {
               className="hero-image-wrap"
             >
               <div className="hero-photo-ring">
+                style={{
+                  animation: "float 3s ease-in-out infinite",
+                }}
                 <img
                   src="/anele.jpeg"
                   alt="Anele Nqabeni"
