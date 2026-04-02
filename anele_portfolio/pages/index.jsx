@@ -478,6 +478,13 @@ export default function Home() {
             grid-template-columns: 1fr !important;
             gap: 24px !important;
           }
+            .cta-buttons {
+            justify-content: center !important;
+          }
+
+            .stats-row {
+            justify-content: center !important;
+            }
 
           /* Hide the desktop right column entirely on mobile */
           .hero-image-wrap {
@@ -615,7 +622,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "32px" }}>
+              <div className="cta-buttons" style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "32px" }}>
                 <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
                   style={{ padding: "13px 28px", background: "#7dd3fc", color: "#020617", fontSize: "10px", fontFamily: "'DM Mono', monospace", letterSpacing: "0.18em", textTransform: "uppercase", border: "none", cursor: "pointer", fontWeight: 500 }}>
                   View Work
@@ -626,7 +633,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div style={{ display: "flex", gap: "36px", flexWrap: "wrap" }}>
+              <div className="stats-row" style={{ display: "flex", gap: "36px", flexWrap: "wrap" }}>
                 {[["1+", "Years Exp."], ["4", "Projects"], ["8+", "Programming Languages"]].map(([val, label]) => (
                   <div key={label} style={{ textAlign: "center" }}>
                     <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "44px", lineHeight: 1, color: "#22d3ee" }}>{val}</p>
