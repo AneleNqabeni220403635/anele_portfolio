@@ -651,7 +651,24 @@ export default function Home() {
               className="hero-image-wrap"
             >
               <div className="hero-photo-ring">
-                <img src="/anele.jpeg" alt="Anele Nqabeni" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", background: "#0b1226" }} />
+                <img
+                  src="/anele.jpeg"
+                  alt="Anele Nqabeni"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "50%",
+                    background: "#0b1226",
+                    transition: "transform 0.5s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.1) rotate(3deg)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1) rotate(0deg)";
+                  }}
+                />
               </div>
 
               {/* Terminal block */}
