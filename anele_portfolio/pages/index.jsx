@@ -679,10 +679,9 @@ export default function Home() {
               transition={{ duration: 0.75, delay: 0.3 }}
               className="hero-image-wrap"
             >
-              <div className="hero-photo-ring">
-                style={{
+              <div className="hero-photo-ring" style={{
                   animation: "float 3s ease-in-out infinite",
-                }}
+                }}>
                 <img
                   src="/anele.jpeg"
                   alt="Anele Nqabeni"
