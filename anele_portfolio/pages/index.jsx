@@ -680,8 +680,8 @@ export default function Home() {
               className="hero-image-wrap"
             >
               <div className="hero-photo-ring" style={{
-                  animation: "float 3s ease-in-out infinite",
-                }}>
+                animation: "float 3s ease-in-out infinite",
+              }}>
                 <img
                   src="/anele.jpeg"
                   alt="Anele Nqabeni"
@@ -815,7 +815,7 @@ export default function Home() {
           {loading ? (
             <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#7b96c5" }}>fetching repos...</p>
           ) : repos.length === 0 ? (
-            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#7b96c5" }}>No public repositories found.</p>
+            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#7b96c5" }}>Coming soon.</p>
           ) : (
             <motion.div
               style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "1px", background: "#091a2c" }}
@@ -835,9 +835,14 @@ export default function Home() {
       {/* ── TIMELINE ── */}
       <section id="timeline" style={{ background: "#081327", borderTop: "1px solid #0d1a36", borderBottom: "1px solid #0d1a36" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "64px" }}>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.3em", color: "#22d3ee", textTransform: "uppercase", flexShrink: 0 }}>04 — Timeline</span>
-            <div style={{ flex: 1, height: "1px", background: "#12213a" }} />
+          <div style={{ marginBottom: "64px" }}>
+            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "16px" }}>
+              04 — Timeline
+            </p>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, color: "#fff", marginBottom: "12px" }}>
+              Experience & Education
+            </h2>
+            <div style={{ width: "48px", height: "2px", background: "#22d3ee" }} />
           </div>
           <div style={{ position: "relative", paddingLeft: "32px", borderLeft: "1px solid #0d1a36" }}>
             {TIMELINE.map((item, i) => (
