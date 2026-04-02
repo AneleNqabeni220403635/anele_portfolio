@@ -567,7 +567,30 @@ export default function Home() {
                   boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
                   flexShrink: 0,
                 }}>
-                  <img src="/anele.jpeg" alt="Anele Nqabeni" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", background: "#0b1226" }} />
+                  <img
+                    src="/anele.jpeg"
+                    alt="Anele Nqabeni"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      borderRadius: "50%",
+                      background: "#0b1226",
+                      transition: "transform 0.5s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.1) rotate(3deg)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1) rotate(0deg)";
+                    }}
+                    onTouchStart={(e) => {
+                      e.currentTarget.style.transform = "scale(1.1) rotate(3deg)";
+                    }}
+                    onTouchEnd={(e) => {
+                      e.currentTarget.style.transform = "scale(1) rotate(0deg)";
+                    }}
+                  />
                 </div>
               </div>
 
@@ -666,6 +689,12 @@ export default function Home() {
                     e.currentTarget.style.transform = "scale(1.1) rotate(3deg)";
                   }}
                   onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1) rotate(0deg)";
+                  }}
+                  onTouchStart={(e) => {
+                    e.currentTarget.style.transform = "scale(1.1) rotate(3deg)";
+                  }}
+                  onTouchEnd={(e) => {
                     e.currentTarget.style.transform = "scale(1) rotate(0deg)";
                   }}
                 />
