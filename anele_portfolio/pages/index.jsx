@@ -563,8 +563,8 @@ export default function Home() {
                 </div>
                 {/* Photo sits top-right */}
                 <div style={{
-                  width: "120px",
-                  height: "120px",
+                  width: "160px",
+                  height: "160px",
                   borderRadius: "50%",
                   padding: "6px",
                   background: "linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2))",
