@@ -137,9 +137,9 @@ function Typewriter({ lines, speed = 38 }) {
   }, [lineIdx, charIdx, lines, speed]);
 
   return (
-    <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", lineHeight: 1.9 }}>
+    <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", lineHeight: 1.9 }}>
       {lines.map((line, i) => (
-        <div key={i} style={{ display: "flex", gap: "8px", minHeight: "18px" }}>
+        <div key={i} style={{ display: "flex", gap: "8px", minHeight: "20px" }}>
           {(i < lineIdx || (i === lineIdx && charIdx > 0)) && (
             <>
               {i % 2 === 0 ? (
@@ -152,7 +152,7 @@ function Typewriter({ lines, speed = 38 }) {
               </span>
               {i === lineIdx && !done && (
                 <span style={{
-                  display: "inline-block", width: "8px", height: "12px",
+                  display: "inline-block", width: "8px", height: "14px",
                   background: "#22d3ee", marginLeft: "2px",
                   animation: "blink 1s step-end infinite"
                 }} />
@@ -163,7 +163,7 @@ function Typewriter({ lines, speed = 38 }) {
       ))}
       {done && (
         <span style={{
-          display: "inline-block", width: "8px", height: "12px",
+          display: "inline-block", width: "8px", height: "14px",
           background: "#22d3ee", marginTop: "4px",
           animation: "blink 1s step-end infinite"
         }} />
@@ -377,13 +377,13 @@ export default function Home() {
 
   const terminalLines = [
     "whoami",
-    "Anele Nqabeni — Lead Dev Intern @ iKhono",
+    "Anele Nqabeni — Junior Software Developer Intern @ iKhono",
     "ls ~/stack",
-    "PHP  MySQL  React  JavaScript  C#  PostgreSQL",
+    "PHP  MySQL  React HTML CSS  JavaScript  REST APIs ",
     "cat status.txt",
-    "Building real products for real people ✓",
+    "Building real product apps for real businesses ✓",
     "git log --oneline -1",
-    "feat: launched ikhono.africa platform",
+    "feat: built core features for ikhono.africa",
   ];
 
   return (
@@ -461,7 +461,7 @@ export default function Home() {
 
         /* Desktop terminal width */
         .terminal-block {
-          width: 300px;
+          width: 400px;
           background: #0d1117;
           border: 1px solid #1a2a4a;
           border-radius: 12px;
@@ -919,6 +919,40 @@ export default function Home() {
           </span>
         </div>
       </footer>
+
+      {/* ── BACK TO TOP ── */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '48px',
+          height: '48px',
+          borderRadius: '50%',
+          background: '#081327',
+          border: '1px solid #22d3ee',
+          color: '#22d3ee',
+          fontSize: '18px',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          transition: 'all 0.2s',
+          zIndex: 1000,
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = '#22d3ee';
+          e.currentTarget.style.color = '#000';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = '#081327';
+          e.currentTarget.style.color = '#22d3ee';
+        }}
+      >
+        ↑
+      </button>
     </div>
   );
 }
