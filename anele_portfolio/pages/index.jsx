@@ -453,13 +453,13 @@ export default function Home() {
           justify-content: center;
           align-items: center;
           gap: 24px;
-          margin-top: -60px;
+          margin-top: -40px;
         }
 
         /* Desktop photo size */
         .hero-photo-ring {
-          width: 260px;
-          height: 260px;
+          width: 220px;
+          height: 220px;
           border-radius: 50%;
           padding: 10px;
           background: linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2));
