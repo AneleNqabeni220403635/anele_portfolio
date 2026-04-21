@@ -9,21 +9,21 @@ const SKILLS = [
   { name: "PHP / MySQL", level: 85 },
   { name: "SQL", level: 82 },
   { name: "React / React Native", level: 80 },
-  { name: "C# / .NET / PostgreSQL", level: 78 },
+  { name: "C# / .NET 9 / PostgreSQL", level: 78 },
   { name: "Java / Spring Boot", level: 70 },
   { name: "Python", level: 65 },
 ];
 
 const TICKER_TAGS = [
-  "React", "PHP", "PostgreSQL", "JavaScript", "C# .NET", "React Native",
-  "Expo", "Railway", "REST APIs", "Git", "GitLab", "FileZilla",
+  "React", "PHP", "PostgreSQL", "JavaScript", "C# .NET 9", "React Native",
+  "Expo", "Railway","Zustand", "Axios","SignalR", "REST APIs", "Git", "GitLab", "FileZilla",
   "Bootstrap", "Joomla", "KonsoleH", "Apache", "MySQL", "Java", "Spring Boot", "Python",
-  "HTML5", "CSS3", "VS Code", "Tailwind",
+  "HTML5", "CSS3", "VS Code", "Tailwind","Node.js",
 ];
 
 const PROJECTS = [
   {
-    name: "iKhono",
+    name: "iKhono Africa",
     index: "01",
     tech: ["PHP", "MySQL", "JavaScript", "HTML/CSS", "REST APIs"],
     period: "Jan 2026 – Present",
@@ -34,7 +34,7 @@ const PROJECTS = [
   {
     name: "Metrolink",
     index: "02",
-    tech: ["C# .NET", "PostgreSQL", "React Native", "Expo", "Railway", "REST APIs"],
+    tech: ["C# .NET 9", "PostgreSQL", "React Native", "Expo", "Railway","Zustand", "Axios","SignalR", "REST APIs"],
     period: "Jan 2026 – Present",
     badge: "STARTUP",
     desc: "A Cape Town transit intelligence platform unifying MyCiTi, Metrorail, and Golden Arrow schedules with crowdsourced delay reporting - built on demo APIs as early development, with live agency integration on the roadmap.",
@@ -63,11 +63,11 @@ const PROJECTS = [
 const TIMELINE = [
   {
     period: "Jan 2026 – Present",
-    role: "Lead Developer Intern (Full Stack)",
-    org: "iKhono",
+    role: "Software Developer Intern (Full Stack)",
+    org: "iKhono Africa",
     location: "Durban, South Africa · Remote",
     type: "work",
-    desc: "Leading full stack development on iKhono, a platform formalising South Africa's minor building works and artisan services sector. Building client dashboards, booking systems, and backend integrations.",
+    desc: "Part of the full stack development team building iKhono Africa, a platform formalising South Africa's minor building works and artisan services sector. Building client dashboards, booking systems, and backend integrations.",
   },
   {
     period: "Jan 2026 – Present",
@@ -75,7 +75,7 @@ const TIMELINE = [
     org: "Metrolink",
     location: "Cape Town · Startup · Early Development",
     type: "work",
-    desc: "Actively contributing to the Metrolink startup. Building and optimising backend APIs using C# .NET on Railway, while integrating with a React Native (Expo) mobile frontend.",
+    desc: "Actively contributing to the Metrolink startup. Building and optimising backend APIs using C# .NET 9 on Railway, while integrating with a React Native (Expo) mobile frontend.",
   },
   {
     period: "Jan 2025 – Dec 2025",
@@ -377,7 +377,7 @@ export default function Home() {
 
   const terminalLines = [
     "whoami",
-    "Anele Nqabeni — Junior Software Developer Intern @ iKhono",
+    "Anele Nqabeni — Junior Software Developer Intern @ iKhono Africa",
     "ls ~/stack",
     "PHP  MySQL  React HTML CSS  JavaScript  REST APIs ",
     "cat status.txt",
@@ -635,7 +635,7 @@ export default function Home() {
                 <span style={{ width: "28px", height: "1px", background: "#22d3ee", display: "inline-block" }} />
               </p>
               <p style={{ maxWidth: "520px", color: "#8aa0d2", fontSize: "14px", lineHeight: 1.75, fontWeight: 300, marginBottom: "32px" }}>
-                Lead Developer Intern at <span style={{ color: "#cdd7ff", fontWeight: 500 }}>iKhono</span>, building the platform that formalises South Africa's artisan economy. Working remotely from Cape Town.
+                Software Developer Intern at <span style={{ color: "#cdd7ff", fontWeight: 500 }}>iKhono Africa</span>, building the platform that formalises South Africa's artisan economy. Working remotely from Cape Town.
               </p>
 
               {/* ── MOBILE ONLY: terminal card fills the block ── */}
@@ -744,10 +744,10 @@ export default function Home() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "64px", alignItems: "start" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-              I'm <span style={{ color: "#22d3ee", fontWeight: 600 }}>Anele Nqabeni</span>, a Junior Software Developer currently interning as Lead Developer at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>iKhono</span> in Durban, South Africa, building the platform that formalises South Africa's artisan economy, working remotely from Cape Town.
+              I'm <span style={{ color: "#22d3ee", fontWeight: 600 }}>Anele Nqabeni</span>, a Junior Software Developer Intern at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>iKhono Africa</span> in Durban, South Africa, building the platform that formalises South Africa's artisan economy, working remotely from Cape Town.
             </p>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-              Day to day I work across the full stack at iKhono: building PHP/MySQL backends, shipping features that real clients depend on, and crafting React frontends at Metrolink. Previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
+              Day to day I work across the full stack at iKhono Africa: building PHP/MySQL backends, shipping features that real clients depend on, and crafting React frontends at Metrolink. Previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
             </p>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
               I hold an Advanced Diploma in ICT Applications Development from CPUT. My drive is simple: write clean code, collaborate well, and keep improving.
@@ -758,8 +758,8 @@ export default function Home() {
             <p style={{ color: "#4a6080", marginBottom: "16px" }}>{"// anele.config.json"}</p>
             {[
               ["name", '"Anele Nqabeni"', "#c084fc"],
-              ["role", '"Lead Developer Intern"', "#fbbf24"],
-              ["company", '"iKhono"', "#fbbf24"],
+              ["role", '"Software Developer Intern"', "#fbbf24"],
+              ["company", '"iKhono Africa"', "#fbbf24"],
               ["location", '"Cape Town, ZA"', "#fbbf24"],
               ["email", '"anele.nqabeni01@gmail.com"', "#fbbf24"],
               ["phone", '"+27 67 876 2327"', "#fbbf24"],
@@ -928,13 +928,13 @@ export default function Home() {
           bottom: '20px',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '36px',
-          height: '36px',
+          width: '28px',
+          height: '28px',
           borderRadius: '50%',
           background: '#081327',
           border: '1px solid #22d3ee',
           color: '#22d3ee',
-          fontSize: '14px',
+          fontSize: '12px',
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',
