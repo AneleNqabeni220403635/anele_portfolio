@@ -607,7 +607,7 @@ export default function Home() {
 
               {/* ── Desktop-only heading (hidden on mobile) ── */}
               <div className="desktop-heading">
-                <h1 className="hero-heading glow-text" style={{ marginBottom: "0px" }}>
+                <h1 className="hero-heading glow-text" style={{ marginBottom: 0 }}>
                   <span style={{
                     fontFamily: "'DM Sans', sans-serif",
                     fontSize: "clamp(18px, 2.5vw, 26px)",
