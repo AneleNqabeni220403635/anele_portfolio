@@ -461,7 +461,7 @@ export default function Home() {
 
         /* Desktop terminal width */
         .terminal-block {
-          width: 400px;
+          width: 320px;
           background: #0d1117;
           border: 1px solid #1a2a4a;
           border-radius: 12px;
