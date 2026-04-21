@@ -79,7 +79,7 @@ const TIMELINE = [
   },
   {
     period: "Jan 2025 – Dec 2025",
-    role: "Advanced Diploma — ICT Applications Development",
+    role: "Advanced Diploma — ICT in Applications Development",
     org: "Cape Peninsula University of Technology",
     location: "Cape Town",
     type: "edu",
@@ -95,7 +95,7 @@ const TIMELINE = [
   },
   {
     period: "Jan 2022 – Dec 2024",
-    role: "Diploma — ICT Applications Development",
+    role: "Diploma — ICT in Applications Development",
     org: "Cape Peninsula University of Technology",
     location: "Cape Town",
     type: "edu",
@@ -750,7 +750,7 @@ export default function Home() {
               Day to day I work across the full stack at iKhono Africa: building PHP/MySQL backends, shipping features that real clients depend on, and crafting React frontends at Metrolink. Previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
             </p>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-              I hold an Advanced Diploma in ICT Applications Development from CPUT. My drive is simple: write clean code, collaborate well, and keep improving.
+              I hold an Advanced Diploma in ICT in Applications Development from CPUT. My drive is simple: write clean code, collaborate well, and keep improving.
             </p>
           </div>
 
