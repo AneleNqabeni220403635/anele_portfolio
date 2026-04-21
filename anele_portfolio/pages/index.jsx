@@ -137,22 +137,22 @@ function Typewriter({ lines, speed = 38 }) {
   }, [lineIdx, charIdx, lines, speed]);
 
   return (
-    <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", lineHeight: 1.9 }}>
+    <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", lineHeight: 1.9 }}>
       {lines.map((line, i) => (
-        <div key={i} style={{ display: "flex", gap: "8px", minHeight: "20px" }}>
+        <div key={i} style={{ display: "flex", gap: "8px", minHeight: "18px" }}>
           {(i < lineIdx || (i === lineIdx && charIdx > 0)) && (
             <>
               {i % 2 === 0 ? (
                 <span style={{ color: "#22d3ee", flexShrink: 0 }}>$</span>
               ) : (
-                <span style={{ width: "12px", flexShrink: 0 }} />
+                <span style={{ width: "10px", flexShrink: 0 }} />
               )}
               <span style={{ color: i % 2 === 0 ? "#e5e5e5" : "#4a6080" }}>
                 {displayed[i] ?? ""}
               </span>
               {i === lineIdx && !done && (
                 <span style={{
-                  display: "inline-block", width: "8px", height: "14px",
+                  display: "inline-block", width: "6px", height: "12px",
                   background: "#22d3ee", marginLeft: "2px",
                   animation: "blink 1s step-end infinite"
                 }} />
@@ -163,7 +163,7 @@ function Typewriter({ lines, speed = 38 }) {
       ))}
       {done && (
         <span style={{
-          display: "inline-block", width: "8px", height: "14px",
+          display: "inline-block", width: "6px", height: "12px",
           background: "#22d3ee", marginTop: "4px",
           animation: "blink 1s step-end infinite"
         }} />
