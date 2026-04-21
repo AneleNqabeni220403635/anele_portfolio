@@ -358,6 +358,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const { scrollY } = useScroll();
   const bgY = useTransform(scrollY, [0, 700], [0, 140]);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     let ignore = false;
@@ -373,6 +374,14 @@ export default function Home() {
       }
     })();
     return () => { ignore = true; };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 100);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const terminalLines = [
@@ -936,7 +945,7 @@ export default function Home() {
           color: '#22d3ee',
           fontSize: '12px',
           cursor: 'pointer',
-          display: 'flex',
+          display: showBackToTop ? 'flex' : 'none',
           alignItems: 'center',
           justifyContent: 'center',
           transition: 'all 0.2s',
