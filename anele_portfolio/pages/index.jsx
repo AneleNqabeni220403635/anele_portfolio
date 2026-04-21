@@ -16,9 +16,9 @@ const SKILLS = [
 
 const TICKER_TAGS = [
   "React", "PHP", "PostgreSQL", "JavaScript", "C# .NET 9", "React Native",
-  "Expo", "Railway","Zustand", "Axios","SignalR", "REST APIs", "Git", "GitLab", "FileZilla",
+  "Expo", "Railway", "Zustand", "Axios", "SignalR", "REST APIs", "Git", "GitLab", "FileZilla",
   "Bootstrap", "Joomla", "KonsoleH", "Apache", "MySQL", "Java", "Spring Boot", "Python",
-  "HTML5", "CSS3", "VS Code", "Tailwind","Node.js",
+  "HTML5", "CSS3", "VS Code", "Tailwind", "Node.js",
 ];
 
 const PROJECTS = [
@@ -34,7 +34,7 @@ const PROJECTS = [
   {
     name: "Metrolink",
     index: "02",
-    tech: ["C# .NET 9", "PostgreSQL", "React Native", "Expo", "Railway","Zustand", "Axios","SignalR", "REST APIs"],
+    tech: ["C# .NET 9", "PostgreSQL", "React Native", "Expo", "Railway", "Zustand", "Axios", "SignalR", "REST APIs"],
     period: "Jan 2026 – Present",
     badge: "STARTUP",
     desc: "A Cape Town transit intelligence platform unifying MyCiTi, Metrorail, and Golden Arrow schedules with crowdsourced delay reporting - built on demo APIs as early development, with live agency integration on the roadmap.",
@@ -610,78 +610,80 @@ export default function Home() {
               </div>
 
               {/* ── Desktop-only heading (hidden on mobile via the photo row above) ── */}
-<div className="desktop-heading">
-  <h1 className="hero-heading glow-text" style={{ marginBottom: "8px" }}>
-    <span style={{
-      fontFamily: "'DM Sans', sans-serif",
-      fontSize: "clamp(18px, 2.5vw, 26px)",
-      fontWeight: 300,
-      color: "#ffffff",
-      letterSpacing: "0.05em",
-      display: "block",
-      marginBottom: "8px",
-      textTransform: "none",
-    }}>
-      Hi, I'm
-    </span>
-    ANELE<br />
-    <span className="text-sky-400">NQABENI</span>
-  </h1>
+              <div className="desktop-heading">
+                <h1 className="hero-heading glow-text" style={{ marginBottom: "8px" }}>
+                  <span style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: "clamp(18px, 2.5vw, 26px)",
+                    fontWeight: 300,
+                    color: "#ffffff",
+                    letterSpacing: "0.05em",
+                    display: "block",
+                    marginBottom: "8px",
+                    textTransform: "none",
+                  }}>
+                    Hi, I'm
+                  </span>
+                  ANELE<br />
+                  <span className="text-sky-400">NQABENI</span>
+                </h1>
 
-  {/* & I'm a Full Stack Developer */}
-  <div style={{
-    display: "flex",
-    alignItems: "baseline",
-    gap: "12px",
-    marginBottom: "24px",
-    flexWrap: "wrap",
-  }}>
-    <span style={{
-      fontFamily: "'Bebas Neue', sans-serif",
-      fontSize: "clamp(40px, 6vw, 80px)",
-      color: "#ffffff",
-      lineHeight: 0.9,
-    }}>
-      &amp;
-    </span>
-    <div>
-      <span style={{
-        fontFamily: "'DM Sans', sans-serif",
-        fontSize: "clamp(13px, 2vw, 20px)",
-        fontWeight: 300,
-        color: "#ffffff",
-        letterSpacing: "0.05em",
-        display: "block",
-        marginBottom: "4px",
-      }}>
-        I'm a
-      </span>
-      <span style={{
-        fontFamily: "'Bebas Neue', sans-serif",
-        fontSize: "clamp(28px, 4vw, 56px)",
-        color: "#38bdf8",
-        lineHeight: 0.9,
-      }}>
-        FULL STACK<br />DEVELOPER
-      </span>
-    </div>
-  </div>
-</div>
+                {/* & I'm a Full Stack Developer */}
+                <div style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: "12px",
+                  marginBottom: "24px",
+                  flexWrap: "wrap",
+                }}>
+                  <span style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: "clamp(18px, 2.5vw, 26px)",
+                    fontWeight: 300,
+                    color: "#ffffff",
+                    letterSpacing: "0.05em",
+                  }}>
+                    &amp;
+                  </span>
+                  <div>
+                    <span style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "clamp(13px, 2vw, 20px)",
+                      fontWeight: 300,
+                      color: "#ffffff",
+                      letterSpacing: "0.05em",
+                      display: "block",
+                      marginBottom: "4px",
+                    }}>
+                      I'm a
+                    </span>
+                    <span style={{
+                      fontFamily: "'Bebas Neue', sans-serif",
+                      fontSize: "clamp(28px, 4vw, 56px)",
+                      color: "#38bdf8",
+                      lineHeight: 0.9,
+                      whiteSpace: "nowrap",
+                    }}>
+                      FULL STACK DEVELOPER
+                    </span>
+                  </div>
+                </div>
+              </div>
 
-<p style={{
-  maxWidth: "540px",
-  color: "#8aa0d2",
-  fontSize: "clamp(13px, 1.5vw, 14px)",
-  lineHeight: 1.75,
-  fontWeight: 300,
-  marginBottom: "32px",
-}}>
-  Building the platform that formalises South Africa's artisan economy as a{" "}
-  <span style={{ color: "#cdd7ff", fontWeight: 500 }}>
-    Software Developer Intern at iKhono Africa
-  </span>
-  . Actively contributing full stack solutions while working remotely from Cape Town.
-</p>
+              <p style={{
+                maxWidth: "540px",
+                color: "#8aa0d2",
+                fontSize: "clamp(13px, 1.5vw, 14px)",
+                lineHeight: 1.75,
+                fontWeight: 300,
+                marginBottom: "32px",
+              }}>
+                Building the platform that formalises South Africa's artisan economy as a{" "}
+                <span style={{ color: "#cdd7ff", fontWeight: 500 }}>
+                  Software Developer Intern at iKhono Africa
+                </span>
+                . Actively contributing full stack solutions while working remotely from Cape Town.
+              </p>
 
               {/* ── MOBILE ONLY: terminal card fills the block ── */}
               <div className="mobile-terminal-full">
