@@ -407,10 +407,10 @@ export default function Home() {
           0%, 100% { opacity: 1; }
           50% { opacity: 0; }
         }
-          @keyframes float {
-             0%   { transform: translateY(0px); }
-             50%  { transform: translateY(-12px); }
-             100% { transform: translateY(0px); }
+        @keyframes float {
+           0%   { transform: translateY(0px); }
+           50%  { transform: translateY(-12px); }
+           100% { transform: translateY(0px); }
         }
         body::after {
           content: '';
@@ -482,23 +482,18 @@ export default function Home() {
 
           .hero-heading { font-size: 52px !important; line-height: 1 !important; }
 
-          /*
-           * Mobile hero: left column is the full-width text block.
-           * Right column disappears from the grid — photo + terminal
-           * are repositioned inside the left column via .mobile-photo-row
-           * and .mobile-terminal-full.
-           */
           .hero-mobile-grid {
             grid-template-columns: 1fr !important;
             gap: 24px !important;
           }
-            .cta-buttons {
+
+          .cta-buttons {
             justify-content: center !important;
           }
 
-            .stats-row {
+          .stats-row {
             justify-content: center !important;
-            }
+          }
 
           /* Hide the desktop right column entirely on mobile */
           .hero-image-wrap {
@@ -517,6 +512,7 @@ export default function Home() {
         /* Hide desktop heading on mobile (replaced by mobile-photo-row heading) */
         @media (max-width: 768px) {
           .desktop-heading { display: none !important; }
+          .mobile-role { display: flex !important; }
         }
 
         /* These are mobile-only elements — hidden on desktop */
@@ -535,6 +531,15 @@ export default function Home() {
           border-radius: 12px;
           margin-bottom: 28px;
         }
+
+        /* & I'm a role line — visible on both, flex by default */
+        .mobile-role {
+          display: flex;
+          align-items: baseline;
+          gap: 12px;
+          margin-bottom: 24px;
+          flex-wrap: wrap;
+        }
       `}</style>
 
       <Nav />
@@ -551,14 +556,13 @@ export default function Home() {
 
               {/* ── MOBILE ONLY: photo (top-right) + heading row ── */}
               <div className="mobile-photo-row">
-                {/* Heading takes remaining space */}
                 <div style={{ flex: 1 }}>
                   <h1 className="hero-heading glow-text" style={{ marginBottom: 0 }}>
                     <span style={{
                       fontFamily: "'DM Sans', sans-serif",
                       fontSize: "18px",
                       fontWeight: 300,
-                      color: "#8aa0d2",
+                      color: "#ffffff",
                       letterSpacing: "0.05em",
                       display: "block",
                       marginBottom: "6px",
@@ -593,23 +597,15 @@ export default function Home() {
                       background: "#0b1226",
                       transition: "transform 0.5s ease",
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "scale(1.1) rotate(3deg)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "scale(1) rotate(0deg)";
-                    }}
-                    onTouchStart={(e) => {
-                      e.currentTarget.style.transform = "scale(1.1) rotate(3deg)";
-                    }}
-                    onTouchEnd={(e) => {
-                      e.currentTarget.style.transform = "scale(1) rotate(0deg)";
-                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.1) rotate(3deg)"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1) rotate(0deg)"; }}
+                    onTouchStart={(e) => { e.currentTarget.style.transform = "scale(1.1) rotate(3deg)"; }}
+                    onTouchEnd={(e) => { e.currentTarget.style.transform = "scale(1) rotate(0deg)"; }}
                   />
                 </div>
               </div>
 
-              {/* ── Desktop-only heading (hidden on mobile via the photo row above) ── */}
+              {/* ── Desktop-only heading (hidden on mobile) ── */}
               <div className="desktop-heading">
                 <h1 className="hero-heading glow-text" style={{ marginBottom: "8px" }}>
                   <span style={{
@@ -627,49 +623,44 @@ export default function Home() {
                   ANELE<br />
                   <span className="text-sky-400">NQABENI</span>
                 </h1>
+              </div>
 
-                {/* & I'm a Full Stack Developer */}
-                <div style={{
-                  display: "flex",
-                  alignItems: "baseline",
-                  gap: "12px",
-                  marginBottom: "24px",
-                  flexWrap: "wrap",
+              {/* ── More Polished ── */}
+              <div className="mobile-role">
+                <span style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "clamp(18px, 2.5vw, 26px)",
+                  fontWeight: 300,
+                  color: "#ffffff",
+                  letterSpacing: "0.05em",
                 }}>
+                  &amp;
+                </span>
+                <div>
                   <span style={{
                     fontFamily: "'DM Sans', sans-serif",
-                    fontSize: "clamp(18px, 2.5vw, 26px)",
+                    fontSize: "clamp(13px, 2vw, 20px)",
                     fontWeight: 300,
                     color: "#ffffff",
                     letterSpacing: "0.05em",
+                    display: "block",
+                    marginBottom: "4px",
                   }}>
-                    &amp;
+                    I'm a
                   </span>
-                  <div>
-                    <span style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "clamp(13px, 2vw, 20px)",
-                      fontWeight: 300,
-                      color: "#ffffff",
-                      letterSpacing: "0.05em",
-                      display: "block",
-                      marginBottom: "4px",
-                    }}>
-                      I'm a
-                    </span>
-                    <span style={{
-                      fontFamily: "'Bebas Neue', sans-serif",
-                      fontSize: "clamp(28px, 4vw, 56px)",
-                      color: "#38bdf8",
-                      lineHeight: 0.9,
-                      whiteSpace: "nowrap",
-                    }}>
-                      FULL STACK DEVELOPER
-                    </span>
-                  </div>
+                  <span style={{
+                    fontFamily: "'Bebas Neue', sans-serif",
+                    fontSize: "clamp(28px, 4vw, 56px)",
+                    lineHeight: 0.9,
+                    whiteSpace: "nowrap", 
+                  }}>
+                    <span style={{ color: "#38bdf8" }}>FULL STACK </span>
+                    <span style={{ color: "#ffffff" }}>DEVELOPER</span>
+                  </span>
                 </div>
               </div>
 
+              {/* Description */}
               <p style={{
                 maxWidth: "540px",
                 color: "#8aa0d2",
@@ -726,9 +717,7 @@ export default function Home() {
               transition={{ duration: 0.75, delay: 0.3 }}
               className="hero-image-wrap"
             >
-              <div className="hero-photo-ring" style={{
-                animation: "float 3s ease-in-out infinite",
-              }}>
+              <div className="hero-photo-ring" style={{ animation: "float 3s ease-in-out infinite" }}>
                 <img
                   src="/anele.jpeg"
                   alt="Anele Nqabeni"
@@ -740,18 +729,10 @@ export default function Home() {
                     background: "#0b1226",
                     transition: "transform 0.5s ease",
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "scale(1.1) rotate(3deg)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "scale(1) rotate(0deg)";
-                  }}
-                  onTouchStart={(e) => {
-                    e.currentTarget.style.transform = "scale(1.1) rotate(3deg)";
-                  }}
-                  onTouchEnd={(e) => {
-                    e.currentTarget.style.transform = "scale(1) rotate(0deg)";
-                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.1) rotate(3deg)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1) rotate(0deg)"; }}
+                  onTouchStart={(e) => { e.currentTarget.style.transform = "scale(1.1) rotate(3deg)"; }}
+                  onTouchEnd={(e) => { e.currentTarget.style.transform = "scale(1) rotate(0deg)"; }}
                 />
               </div>
 
@@ -767,7 +748,6 @@ export default function Home() {
                   <Typewriter lines={terminalLines} speed={36} />
                 </div>
               </div>
-
             </motion.div>
           </motion.div>
         </div>
