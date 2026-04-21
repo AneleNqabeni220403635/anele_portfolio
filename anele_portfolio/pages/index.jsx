@@ -520,7 +520,7 @@ export default function Home() {
           display: none;
           align-items: center;
           gap: 16px;
-          margin-bottom: 20px;
+          margin-bottom: 0px;
         }
 
         .mobile-terminal-full {
