@@ -525,7 +525,7 @@ export default function Home() {
         /* These are mobile-only elements — hidden on desktop */
         .mobile-photo-row {
           display: none;
-          align-items: center;
+          align-items: flex-start;
           gap: 16px;
           margin-bottom: 0px;
         }
