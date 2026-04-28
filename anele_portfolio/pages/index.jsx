@@ -423,6 +423,7 @@ export default function Home() {
           background: radial-gradient(circle at top left, rgba(34,211,238,0.18), transparent 22%),
                       radial-gradient(circle at 88% 10%, rgba(59,130,246,0.18), transparent 18%),
                       linear-gradient(180deg, rgba(3,12,32,1) 0%, rgba(4,8,24,1) 100%);
+          justify-content: flex-end;
         }
         .hero-panel { background: rgba(6,16,44,0.88); border: 1px solid rgba(34,211,238,0.2); box-shadow: 0 40px 120px rgba(0,0,0,0.36); }
         .soft-text { color: #96c8ef; }
@@ -506,6 +507,12 @@ export default function Home() {
           }
           .mobile-terminal-full {
             display: block !important;
+          }
+
+          .hero-grid {
+            justify-content: flex-start !important;
+            padding: 40px 0 !important;
+            min-height: auto !important;
           }
         }
 
