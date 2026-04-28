@@ -431,7 +431,6 @@ export default function Home() {
           font-family: 'Bebas Neue', sans-serif;
           font-size: clamp(72px, 10vw, 120px);
           line-height: 0.9;
-          margin-bottom: 24px;
           color: #fff;
         }
         .glow-text {
@@ -477,6 +476,11 @@ export default function Home() {
           border-radius: 12px;
         }
 
+        /* Desktop heading has bottom margin */
+        .desktop-heading {
+          margin-bottom: 24px;
+        }
+
         /* ── Nav hidden on mobile ── */
         @media (max-width: 768px) {
           .nav-links { display: none !important; }
@@ -511,15 +515,30 @@ export default function Home() {
 
           .hero-grid {
             justify-content: flex-start !important;
-            padding: 40px 0 !important;
+            /* Add top padding so content clears the fixed nav bar */
+            padding: 80px 0 40px !important;
             min-height: auto !important;
           }
-        }
 
-        /* Hide desktop heading on mobile (replaced by mobile-photo-row heading) */
-        @media (max-width: 768px) {
-          .desktop-heading { display: none !important; }
-          .mobile-role { display: flex !important; }
+          /* FIX: desktop heading must take zero space on mobile */
+          .desktop-heading {
+            display: none !important;
+            height: 0 !important;
+            overflow: hidden !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+
+          /* FIX: kill the hero-heading bottom margin inside mobile-photo-row */
+          .mobile-photo-row .hero-heading {
+            margin-bottom: 0 !important;
+          }
+
+          /* FIX: tighten the role line so it sits flush below NQABENI */
+          .mobile-role {
+            margin-top: 8px !important;
+            margin-bottom: 16px !important;
+          }
         }
 
         /* These are mobile-only elements — hidden on desktop */
@@ -527,7 +546,7 @@ export default function Home() {
           display: none;
           align-items: flex-start;
           gap: 16px;
-          margin-bottom: 0px;
+          margin-bottom: 0;
         }
 
         .mobile-terminal-full {
@@ -564,7 +583,7 @@ export default function Home() {
               {/* ── MOBILE ONLY: photo (top-right) + heading row ── */}
               <div className="mobile-photo-row">
                 <div style={{ flex: 1 }}>
-                  <h1 className="hero-heading glow-text" style={{ marginBottom: 0 }}>
+                  <h1 className="hero-heading glow-text">
                     <span style={{
                       fontFamily: "'DM Sans', sans-serif",
                       fontSize: "18px",
@@ -612,9 +631,9 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* ── Desktop-only heading (hidden on mobile) ── */}
+              {/* ── Desktop-only heading (hidden on mobile, takes zero space) ── */}
               <div className="desktop-heading">
-                <h1 className="hero-heading glow-text" style={{ marginBottom: 0 }}>
+                <h1 className="hero-heading glow-text">
                   <span style={{
                     fontFamily: "'DM Sans', sans-serif",
                     fontSize: "clamp(18px, 2.5vw, 26px)",
@@ -632,7 +651,7 @@ export default function Home() {
                 </h1>
               </div>
 
-              {/* ── More Polished ── */}
+              {/* ── Role line — sits directly below heading on both mobile & desktop ── */}
               <div className="mobile-role">
                 <span style={{
                   fontFamily: "'DM Sans', sans-serif",
@@ -659,7 +678,7 @@ export default function Home() {
                     fontFamily: "'Bebas Neue', sans-serif",
                     fontSize: "clamp(28px, 4vw, 56px)",
                     lineHeight: 0.9,
-                    whiteSpace: "nowrap", 
+                    whiteSpace: "nowrap",
                   }}>
                     <span style={{ color: "#38bdf8" }}>FULL STACK </span>
                     <span style={{ color: "#ffffff" }}>DEVELOPER</span>
