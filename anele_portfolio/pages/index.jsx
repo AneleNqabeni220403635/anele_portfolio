@@ -594,7 +594,7 @@ export default function Home() {
               {/* ── MOBILE ONLY: photo (top-right) + heading row ── */}
               <div className="mobile-photo-row" style={{ marginBottom: "0" }}>
                 <div style={{ flex: 1, marginBottom: "0" }}>
-                  <h1 className="hero-heading glow-text">
+                  <h1 className="hero-heading glow-text" style={{ paddingBottom: "0" }}>
                     <span style={{
                       fontFamily: "'DM Sans', sans-serif",
                       fontSize: "18px",
@@ -602,7 +602,7 @@ export default function Home() {
                       color: "#ffffff",
                       letterSpacing: "0.05em",
                       display: "block",
-                      marginBottom: "6px",
+                      marginBottom: "0px",
                       textTransform: "none",
                     }}>
                       Hi, I'm
