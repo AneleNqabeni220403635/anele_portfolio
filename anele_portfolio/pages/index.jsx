@@ -489,7 +489,7 @@ export default function Home() {
 
           .hero-mobile-grid {
             grid-template-columns: 1fr !important;
-            gap: 24px !important;
+            gap: 0px !important;
           }
 
           .cta-buttons {
@@ -508,6 +508,7 @@ export default function Home() {
           /* Show mobile-only elements */
           .mobile-photo-row {
             display: flex !important;
+            margin-bottom: 0 !important;
           }
           .mobile-terminal-full {
             display: block !important;
@@ -536,7 +537,7 @@ export default function Home() {
 
           /* FIX: tighten the role line so it sits flush below NQABENI */
           .mobile-role {
-            margin-top: 8px !important;
+            margin-top: 0px !important;
             margin-bottom: 16px !important;
           }
         }
