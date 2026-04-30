@@ -362,7 +362,10 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth <= 768);
+    const updateIsMobile = () => setIsMobile(window.innerWidth <= 768);
+    updateIsMobile();
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
   }, []);
 
   useEffect(() => {
@@ -592,7 +595,7 @@ export default function Home() {
             <div>
 
               {/* ── MOBILE ONLY: photo (top-right) + heading row ── */}
-              <div className="mobile-photo-row" style={{ marginBottom: "0" }}>
+              <div className="mobile-photo-row" style={{ marginBottom: "0", alignItems: "flex-start" }}>
                 <div style={{ flex: 1, marginBottom: "0" }}>
                   <h1 className="hero-heading glow-text" style={{ paddingBottom: "0" }}>
                     <span style={{
@@ -613,8 +616,8 @@ export default function Home() {
                 </div>
                 {/* Photo sits top-right */}
                 <div style={{
-                  width: isMobile ? "110px" : "160px",
-                  height: isMobile ? "110px" : "160px",
+                  width: isMobile ? "96px" : "160px",
+                  height: isMobile ? "96px" : "160px",
                   borderRadius: "50%",
                   padding: "6px",
                   background: "linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2))",
