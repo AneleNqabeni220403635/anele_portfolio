@@ -542,7 +542,7 @@ export default function Home() {
           }
 
           .mobile-photo-row {
-            align-items: center !important;
+            align-items: flex-start !important;
           }
 
           /* FIX: tighten the role line so it sits flush below NQABENI */
@@ -613,8 +613,8 @@ export default function Home() {
                 </div>
                 {/* Photo sits top-right */}
                 <div style={{
-                  width: "160px",
-                  height: "160px",
+                  width: "110px",
+                  height: "110px",
                   borderRadius: "50%",
                   padding: "6px",
                   background: "linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2))",
