@@ -533,6 +533,11 @@ export default function Home() {
           /* FIX: kill the hero-heading bottom margin inside mobile-photo-row */
           .mobile-photo-row .hero-heading {
             margin-bottom: 0 !important;
+            line-height: 0.95 !important;
+          }
+
+          .mobile-photo-row {
+            align-items: center !important;
           }
 
           /* FIX: tighten the role line so it sits flush below NQABENI */
@@ -564,7 +569,7 @@ export default function Home() {
           display: flex;
           align-items: baseline;
           gap: 12px;
-          margin-bottom: 24px;
+          margin-bottom: 8px;
           flex-wrap: wrap;
         }
       `}</style>
@@ -582,8 +587,8 @@ export default function Home() {
             <div>
 
               {/* ── MOBILE ONLY: photo (top-right) + heading row ── */}
-              <div className="mobile-photo-row">
-                <div style={{ flex: 1 }}>
+              <div className="mobile-photo-row" style={{ marginBottom: "0" }}>
+                <div style={{ flex: 1, marginBottom: "0" }}>
                   <h1 className="hero-heading glow-text">
                     <span style={{
                       fontFamily: "'DM Sans', sans-serif",
