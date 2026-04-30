@@ -359,6 +359,11 @@ export default function Home() {
   const { scrollY } = useScroll();
   const bgY = useTransform(scrollY, [0, 700], [0, 140]);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 768);
+  }, []);
 
   useEffect(() => {
     let ignore = false;
@@ -638,24 +643,26 @@ export default function Home() {
               </div>
 
               {/* ── Desktop-only heading (hidden on mobile, takes zero space) ── */}
-              <div className="desktop-heading">
-                <h1 className="hero-heading glow-text">
-                  <span style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: "clamp(18px, 2.5vw, 26px)",
-                    fontWeight: 300,
-                    color: "#ffffff",
-                    letterSpacing: "0.05em",
-                    display: "block",
-                    marginBottom: "8px",
-                    textTransform: "none",
-                  }}>
-                    Hi, I'm
-                  </span>
-                  ANELE<br />
-                  <span className="text-sky-400">NQABENI</span>
-                </h1>
-              </div>
+              {!isMobile && (
+                <div className="desktop-heading">
+                  <h1 className="hero-heading glow-text">
+                    <span style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "clamp(18px, 2.5vw, 26px)",
+                      fontWeight: 300,
+                      color: "#ffffff",
+                      letterSpacing: "0.05em",
+                      display: "block",
+                      marginBottom: "8px",
+                      textTransform: "none",
+                    }}>
+                      Hi, I'm
+                    </span>
+                    ANELE<br />
+                    <span className="text-sky-400">NQABENI</span>
+                  </h1>
+                </div>
+              )}
 
               {/* ── Role line — sits directly below heading on both mobile & desktop ── */}
               <div className="mobile-role">
