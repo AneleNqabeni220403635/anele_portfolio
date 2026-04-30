@@ -595,9 +595,9 @@ export default function Home() {
             <div>
 
               {/* ── MOBILE ONLY: photo (top-right) + heading row ── */}
-              <div className="mobile-photo-row" style={{ marginBottom: "0", alignItems: "flex-start" }}>
-                <div style={{ flex: 1, marginBottom: "0" }}>
-                  <h1 className="hero-heading glow-text" style={{ paddingBottom: "0" }}>
+              <div className="mobile-photo-row" style={{ marginBottom: "0", alignItems: "flex-start", gap: isMobile ? "12px" : "16px" }}>
+                <div style={{ flex: 1, marginBottom: "0", margin: "0", padding: "0" }}>
+                  <h1 className="hero-heading glow-text" style={{ paddingBottom: "0", margin: "0", paddingTop: "0" }}>
                     <span style={{
                       fontFamily: "'DM Sans', sans-serif",
                       fontSize: "18px",
@@ -616,8 +616,8 @@ export default function Home() {
                 </div>
                 {/* Photo sits top-right */}
                 <div style={{
-                  width: isMobile ? "96px" : "160px",
-                  height: isMobile ? "96px" : "160px",
+                  width: isMobile ? "120px" : "160px",
+                  height: isMobile ? "120px" : "160px",
                   borderRadius: "50%",
                   padding: "6px",
                   background: "linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2))",
@@ -647,8 +647,8 @@ export default function Home() {
 
               {/* ── Desktop-only heading (hidden on mobile, takes zero space) ── */}
               {!isMobile && (
-                <div className="desktop-heading">
-                  <h1 className="hero-heading glow-text">
+                <div className="desktop-heading" style={{ margin: "0", padding: "0" }}>
+                  <h1 className="hero-heading glow-text" style={{ margin: "0", padding: "0" }}>
                     <span style={{
                       fontFamily: "'DM Sans', sans-serif",
                       fontSize: "clamp(18px, 2.5vw, 26px)",
@@ -656,7 +656,7 @@ export default function Home() {
                       color: "#ffffff",
                       letterSpacing: "0.05em",
                       display: "block",
-                      marginBottom: "8px",
+                      marginBottom: "0px",
                       textTransform: "none",
                     }}>
                       Hi, I'm
