@@ -605,7 +605,7 @@ export default function Home() {
                       color: "#ffffff",
                       letterSpacing: "0.05em",
                       display: "block",
-                      marginBottom: "0px",
+                      marginBottom: "8px",
                       textTransform: "none",
                     }}>
                       Hi, I'm
@@ -697,7 +697,7 @@ export default function Home() {
                     whiteSpace: "nowrap",
                   }}>
                     <span style={{ color: "#38bdf8" }}>FULL STACK </span>
-                    <span style={{ color: "#ffffff" }}>DEVELOPER</span>
+                    <span style={{ color: "#ffffff" }}>SOFTWARE ENGINEER</span>
                   </span>
                 </div>
               </div>
