@@ -483,7 +483,7 @@ export default function Home() {
         }
         .hero-panel { background: rgba(6,16,44,0.88); border: 1px solid rgba(34,211,238,0.2); box-shadow: 0 40px 120px rgba(0,0,0,0.36); }
         .soft-text { color: #96c8ef; }
-        .hero-heading { font-family: 'Space Grotesk', sans-serif; font-size: clamp(72px, 10vw, 120px); font-weight: 800; line-height: 0.92; color: #fff; }
+        .hero-heading { font-family: 'Space Grotesk', sans-serif; font-size: clamp(58px, 7.5vw, 90px); font-weight: 800; line-height: 0.92; color: #fff; }
         .glow-text { text-shadow: 0 0 18px rgba(52,211,153,0.25), 0 0 54px rgba(16,185,129,0.2); }
         .text-sky-400 { color: #38bdf8; }
         .text-emerald { color: #34d399; }
@@ -679,7 +679,7 @@ export default function Home() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "64px", alignItems: "start" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-              I'm <span style={{ color: "#22d3ee", fontWeight: 600 }}>Anele Nqabeni</span>, a Junior Developer Intern at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Zaio Institute of Technology</span>, where I have deployed full stack solutions for <span style={{ color: "#e5e5e5", fontWeight: 600 }}>iKhono Africa</span> a Durban based startup which helps digitise South Africa's artisan economy, working remotely from Cape Town.
+              I'm <span style={{ color: "#22d3ee", fontWeight: 600 }}>Anele Nqabeni</span>, a Junior Developer Intern at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Zaio Institute of Technology</span>, where I have deployed full stack solutions for <span style={{ color: "#e5e5e5", fontWeight: 600 }}>iKhono Africa</span> a Durban based starup which helps digitise South Africa's artisan economy, working remotely from Cape Town.
             </p>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
               I'm still early in my career, but I have made every opportunity count. Day to day I work across the full stack at iKhono Africa: building PHP/MySQL backend integrations together with JavaScript for the frontend, shipping features that real clients and artisans depend on. I am also crafting full stack solutions at Metrolink as a personal startup project. I previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
