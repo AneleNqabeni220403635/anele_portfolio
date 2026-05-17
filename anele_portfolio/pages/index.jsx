@@ -190,7 +190,6 @@ function Ticker() {
   useAnimationFrame(() => {
     if (isDragging.current) return;
     if (singleWidth.current === 0) return;
-
     let next = x.get() - SPEED;
     if (Math.abs(next) >= singleWidth.current) {
       next = 0;
@@ -212,12 +211,7 @@ function Ticker() {
     >
       <motion.div
         ref={stripRef}
-        style={{
-          display: "flex",
-          gap: "0",
-          whiteSpace: "nowrap",
-          x,
-        }}
+        style={{ display: "flex", gap: "0", whiteSpace: "nowrap", x }}
         drag="x"
         dragConstraints={{ left: -99999, right: 99999 }}
         dragElastic={0}
@@ -235,17 +229,7 @@ function Ticker() {
         whileDrag={{ cursor: "grabbing" }}
       >
         {repeated.map((tag, i) => (
-          <span
-            key={i}
-            style={{
-              fontFamily: "'DM Mono', monospace",
-              fontSize: "9px",
-              letterSpacing: "0.25em",
-              color: "#dbe4ff",
-              textTransform: "uppercase",
-              padding: "0 24px",
-            }}
-          >
+          <span key={i} style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.25em", color: "#dbe4ff", textTransform: "uppercase", padding: "0 24px" }}>
             {tag} <span style={{ color: "#7dd3fc", margin: "0 8px" }}>◆</span>
           </span>
         ))}
@@ -286,14 +270,7 @@ function RepoCard({ r }) {
       rel="noreferrer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{
-        display: "block",
-        padding: "20px",
-        background: "#081327",
-        border: `1px solid ${hovered ? "#7dd3fc" : "#0d1a36"}`,
-        textDecoration: "none",
-        transition: "border-color 0.15s",
-      }}
+      style={{ display: "block", padding: "20px", background: "#081327", border: `1px solid ${hovered ? "#7dd3fc" : "#0d1a36"}`, textDecoration: "none", transition: "border-color 0.15s" }}
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "10px", gap: "8px" }}>
         <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: hovered ? "#22d3ee" : "#ccc", transition: "color 0.15s", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -381,7 +358,6 @@ function Nav() {
       borderBottom: scrolled ? "1px solid rgba(34,211,238,0.18)" : "1px solid transparent",
       backdropFilter: scrolled ? "blur(18px)" : "none",
     }}>
-      {/* Persistent thin accent line always visible at very bottom of nav */}
       <div style={{
         position: "absolute", bottom: 0, left: 0, right: 0, height: "1px",
         background: "linear-gradient(90deg, transparent, rgba(34,211,238,0.35) 20%, rgba(34,211,238,0.35) 80%, transparent)",
@@ -389,23 +365,12 @@ function Nav() {
       }} />
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "18px", letterSpacing: "0.25em", color: "#22d3ee" }}>
-          AN<span style={{ color: "#ffffff", opacity: 0.35 }}>.</span><span style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "13px",
-            letterSpacing: "0.1em",
-            color: "#ffffff",
-            opacity: 0.5,
-            fontWeight: 400
-          }}>dev</span>
+          AN<span style={{ color: "#ffffff", opacity: 0.35 }}>.</span><span style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", letterSpacing: "0.1em", color: "#ffffff", opacity: 0.5, fontWeight: 400 }}>dev</span>
         </span>
         <div className="nav-links" style={{ display: "flex", gap: "32px" }}>
           {links.map((l) => (
             <button key={l} onClick={() => scroll(l)}
-              style={{
-                fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.25em",
-                textTransform: "uppercase", color: "#9acafc", background: "none", border: "none",
-                cursor: "pointer", transition: "color 0.2s", position: "relative", padding: "4px 0",
-              }}
+              style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.25em", textTransform: "uppercase", color: "#9acafc", background: "none", border: "none", cursor: "pointer", transition: "color 0.2s", position: "relative", padding: "4px 0" }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = "#22d3ee";
                 const line = e.currentTarget.querySelector(".nav-underline");
@@ -418,27 +383,14 @@ function Nav() {
               }}
             >
               ./{l}
-              <span className="nav-underline" style={{
-                position: "absolute", bottom: "-2px", left: 0,
-                width: "0%", height: "1px",
-                background: "#22d3ee",
-                transition: "width 0.2s ease",
-                display: "block",
-              }} />
+              <span className="nav-underline" style={{ position: "absolute", bottom: "-2px", left: 0, width: "0%", height: "1px", background: "#22d3ee", transition: "width 0.2s ease", display: "block" }} />
             </button>
           ))}
         </div>
         <a
           href="/Anele-Nqabeni-Resume.pdf.pdf"
           download
-          style={{
-            fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.2em",
-            textTransform: "uppercase", padding: "8px 16px",
-            border: "1px solid rgba(34,211,238,0.4)", color: "#22d3ee",
-            textDecoration: "none", transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s",
-            display: "inline-flex", alignItems: "center", gap: "6px",
-            boxShadow: "0 0 0 0 rgba(34,211,238,0)",
-          }}
+          style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.2em", textTransform: "uppercase", padding: "8px 16px", border: "1px solid rgba(34,211,238,0.4)", color: "#22d3ee", textDecoration: "none", transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s", display: "inline-flex", alignItems: "center", gap: "6px", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
           onMouseEnter={(e) => {
             e.currentTarget.style.background = "#22d3ee";
             e.currentTarget.style.color = "#020617";
@@ -452,7 +404,7 @@ function Nav() {
             e.currentTarget.style.boxShadow = "0 0 0 0 rgba(34,211,238,0)";
           }}
         >
-          <span style={{ fontSize: "11px" }}>↓</span> cv
+          <span style={{ fontSize: "11px" }}>↓</span> cv.pdf
         </a>
       </div>
     </nav>
@@ -492,9 +444,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 100);
-    };
+    const handleScroll = () => { setShowBackToTop(window.scrollY > 100); };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -513,24 +463,15 @@ export default function Home() {
   return (
     <div style={{ background: "#040b1c", color: "#e5e5e5", minHeight: "100vh" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@700;800&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Syne', sans-serif; background: #040b1c; color: #e5e5e5; }
         html { scroll-behavior: smooth; }
         ::selection { background: #22d3ee; color: #000; }
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
-        }
-        @keyframes float {
-           0%   { transform: translateY(0px); }
-           50%  { transform: translateY(-12px); }
-           100% { transform: translateY(0px); }
-        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-12px); } 100% { transform: translateY(0px); } }
         body::after {
-          content: '';
-          position: fixed; inset: 0;
-          pointer-events: none; z-index: 9998; opacity: 0.08;
+          content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9998; opacity: 0.08;
           background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
           background-size: 180px 180px;
         }
@@ -542,167 +483,40 @@ export default function Home() {
         }
         .hero-panel { background: rgba(6,16,44,0.88); border: 1px solid rgba(34,211,238,0.2); box-shadow: 0 40px 120px rgba(0,0,0,0.36); }
         .soft-text { color: #96c8ef; }
-        .hero-heading {
-          font-family: 'Bebas Neue', sans-serif;
-          font-size: clamp(72px, 10vw, 120px);
-          line-height: 0.9;
-          color: #fff;
-        }
-        .glow-text {
-          text-shadow: 0 0 18px rgba(52,211,153,0.25), 0 0 54px rgba(16,185,129,0.2);
-        }
+        .hero-heading { font-family: 'Space Grotesk', sans-serif; font-size: clamp(72px, 10vw, 120px); font-weight: 800; line-height: 0.92; color: #fff; }
+        .glow-text { text-shadow: 0 0 18px rgba(52,211,153,0.25), 0 0 54px rgba(16,185,129,0.2); }
         .text-sky-400 { color: #38bdf8; }
         .text-emerald { color: #34d399; }
-
-        /* ── Hero grid watermark ── */
         .hero-grid::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          pointer-events: none;
-          z-index: 1;
-          background-image:
-            linear-gradient(rgba(52,211,153,0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(52,211,153,0.04) 1px, transparent 1px);
+          content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+          background-image: linear-gradient(rgba(52,211,153,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(52,211,153,0.04) 1px, transparent 1px);
           background-size: 48px 48px;
           mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 80%);
           -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 80%);
         }
-
-        /* ── Desktop: side-by-side grid ── */
-        .hero-mobile-grid {
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          gap: 48px;
-          align-items: center;
-        }
-
-        /* Desktop right column: photo on top, terminal below, centred */
-        .hero-image-wrap {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          gap: 24px;
-          margin-top: -40px;
-        }
-
-        /* Desktop photo size */
-        .hero-photo-ring {
-          width: 220px;
-          height: 220px;
-          border-radius: 50%;
-          padding: 10px;
-          background: linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2));
-          border: 1px solid rgba(255,255,255,0.08);
-          box-shadow: 0 40px 80px rgba(0,0,0,0.25);
-          flex-shrink: 0;
-        }
-
-        /* Desktop terminal width */
-        .terminal-block {
-          width: 320px;
-          background: #0d1117;
-          border: 1px solid #1a2a4a;
-          border-radius: 12px;
-        }
-
-        /* Desktop heading has bottom margin */
-        .desktop-heading {
-          margin-bottom: 24px;
-        }
-
-        /* ── Nav hidden on mobile ── */
+        .hero-mobile-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; }
+        .hero-image-wrap { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 24px; margin-top: -40px; }
+        .hero-photo-ring { width: 220px; height: 220px; border-radius: 50%; padding: 10px; background: linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2)); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 40px 80px rgba(0,0,0,0.25); flex-shrink: 0; }
+        .terminal-block { width: 320px; background: #0d1117; border: 1px solid #1a2a4a; border-radius: 12px; }
+        .desktop-heading { margin-bottom: 24px; }
         @media (max-width: 768px) {
           .nav-links { display: none !important; }
-
-          .hero-heading { font-size: 52px !important; line-height: 1 !important; }
-
-          .hero-mobile-grid {
-            grid-template-columns: 1fr !important;
-            gap: 0px !important;
-          }
-
-          .cta-buttons {
-            justify-content: center !important;
-          }
-
-          .stats-row {
-            justify-content: center !important;
-          }
-
-          /* Hide the desktop right column entirely on mobile */
-          .hero-image-wrap {
-            display: none !important;
-          }
-
-          /* Show mobile-only elements */
-          .mobile-photo-row {
-            display: flex !important;
-            margin-bottom: 0 !important;
-          }
-          .mobile-terminal-full {
-            display: block !important;
-          }
-
-          .hero-grid {
-            justify-content: flex-start !important;
-            /* Add top padding so content clears the fixed nav bar */
-            padding: 80px 0 40px !important;
-            min-height: auto !important;
-          }
-
-          /* FIX: desktop heading must take zero space on mobile */
-          .desktop-heading {
-            display: none !important;
-            height: 0 !important;
-            overflow: hidden !important;
-            margin: 0 !important;
-            padding: 0 !important;
-          }
-
-          /* FIX: kill the hero-heading bottom margin inside mobile-photo-row */
-          .mobile-photo-row .hero-heading {
-            margin-bottom: 0 !important;
-            line-height: 0.95 !important;
-          }
-
-          .mobile-photo-row {
-            align-items: flex-start !important;
-          }
-
-          /* FIX: tighten the role line so it sits flush below NQABENI */
-          .mobile-role {
-            margin-top: 0px !important;
-            margin-bottom: 16px !important;
-          }
+          .hero-heading { font-family: 'Space Grotesk', sans-serif !important; font-size: 44px !important; line-height: 0.95 !important; font-weight: 800 !important; }
+          .hero-mobile-grid { grid-template-columns: 1fr !important; gap: 0px !important; }
+          .cta-buttons { justify-content: center !important; }
+          .stats-row { justify-content: center !important; }
+          .hero-image-wrap { display: none !important; }
+          .mobile-photo-row { display: flex !important; margin-bottom: 0 !important; }
+          .mobile-terminal-full { display: block !important; }
+          .hero-grid { justify-content: flex-start !important; padding: 80px 0 40px !important; min-height: auto !important; }
+          .desktop-heading { display: none !important; height: 0 !important; overflow: hidden !important; margin: 0 !important; padding: 0 !important; }
+          .mobile-photo-row .hero-heading { margin-bottom: 0 !important; line-height: 0.95 !important; }
+          .mobile-photo-row { align-items: flex-start !important; }
+          .mobile-role { margin-top: 0px !important; margin-bottom: 16px !important; }
         }
-
-        /* These are mobile-only elements — hidden on desktop */
-        .mobile-photo-row {
-          display: none;
-          align-items: flex-start;
-          gap: 16px;
-          margin-bottom: 0;
-        }
-
-        .mobile-terminal-full {
-          display: none;
-          width: 100%;
-          background: #0d1117;
-          border: 1px solid #1a2a4a;
-          border-radius: 12px;
-          margin-bottom: 28px;
-        }
-
-        /* & I'm a role line — visible on both, flex by default */
-        .mobile-role {
-          display: flex;
-          align-items: baseline;
-          gap: 12px;
-          margin-bottom: 8px;
-          flex-wrap: wrap;
-        }
+        .mobile-photo-row { display: none; align-items: flex-start; gap: 16px; margin-bottom: 0; }
+        .mobile-terminal-full { display: none; width: 100%; background: #0d1117; border: 1px solid #1a2a4a; border-radius: 12px; margin-bottom: 28px; }
+        .mobile-role { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
       `}</style>
 
       <Nav />
@@ -710,56 +524,23 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className="hero-grid" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "80px 0 48px", position: "relative", overflow: "hidden", borderBottom: "1px solid rgba(34,211,238,0.12)" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", width: "100%", position: "relative", zIndex: 2 }}>
-
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.1 }}
-            className="hero-mobile-grid">
+          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.1 }} className="hero-mobile-grid">
 
             {/* Left: text content */}
             <div>
-
-              {/* ── MOBILE ONLY: photo (top-right) + heading row ── */}
+              {/* ── MOBILE ONLY: photo + heading row ── */}
               <div className="mobile-photo-row" style={{ marginBottom: "0", alignItems: "flex-start", gap: isMobile ? "12px" : "16px" }}>
                 <div style={{ flex: 1, marginBottom: "0", margin: "0", padding: "0" }}>
                   <h1 className="hero-heading glow-text" style={{ paddingBottom: "0", margin: "0", paddingTop: "0" }}>
-                    <span style={{
-                      fontFamily: "'Syne', sans-serif",
-                      fontSize: "18px",
-                      fontWeight: 300,
-                      color: "#ffffff",
-                      letterSpacing: "0.05em",
-                      display: "block",
-                      marginBottom: "8px",
-                      textTransform: "none",
-                    }}>
+                    <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "18px", fontWeight: 300, color: "#ffffff", letterSpacing: "0.05em", display: "block", marginBottom: "8px", textTransform: "none" }}>
                       Hi, I'm
                     </span>
                     ANELE<br />
                     <span className="text-sky-400">NQABENI</span>
                   </h1>
                 </div>
-                {/* Photo sits top-right */}
-                <div style={{
-                  width: isMobile ? "120px" : "160px",
-                  height: isMobile ? "120px" : "160px",
-                  borderRadius: "50%",
-                  padding: "6px",
-                  background: "linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2))",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
-                  flexShrink: 0,
-                  animation: "float 3s ease-in-out infinite",
-                }}>
-                  <img
-                    src="/anele.jpeg"
-                    alt="Anele Nqabeni"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      borderRadius: "50%",
-                      background: "#0b1226",
-                      transition: "transform 0.5s ease",
-                    }}
+                <div style={{ width: isMobile ? "120px" : "160px", height: isMobile ? "120px" : "160px", borderRadius: "50%", padding: "6px", background: "linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2))", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 20px 40px rgba(0,0,0,0.3)", flexShrink: 0, animation: "float 3s ease-in-out infinite" }}>
+                  <img src="/anele.jpeg" alt="Anele Nqabeni" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", background: "#0b1226", transition: "transform 0.5s ease" }}
                     onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.1) rotate(3deg)"; }}
                     onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1) rotate(0deg)"; }}
                     onTouchStart={(e) => { e.currentTarget.style.transform = "scale(1.1) rotate(3deg)"; }}
@@ -768,20 +549,11 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* ── Desktop-only heading (hidden on mobile, takes zero space) ── */}
+              {/* ── Desktop-only heading ── */}
               {!isMobile && (
                 <div className="desktop-heading" style={{ margin: "0", padding: "0" }}>
                   <h1 className="hero-heading glow-text" style={{ margin: "0", padding: "0" }}>
-                    <span style={{
-                      fontFamily: "'Syne', sans-serif",
-                      fontSize: "clamp(18px, 2.5vw, 26px)",
-                      fontWeight: 300,
-                      color: "#ffffff",
-                      letterSpacing: "0.05em",
-                      display: "block",
-                      marginBottom: "16px",
-                      textTransform: "none",
-                    }}>
+                    <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(18px, 2.5vw, 26px)", fontWeight: 300, color: "#ffffff", letterSpacing: "0.05em", display: "block", marginBottom: "16px", textTransform: "none" }}>
                       Hi, I'm
                     </span>
                     ANELE<br />
@@ -790,68 +562,35 @@ export default function Home() {
                 </div>
               )}
 
-              {/* ── Role line — sits directly below heading on both mobile & desktop ── */}
+              {/* ── Role line ── */}
               <div className="mobile-role">
-                <span style={{
-                  fontFamily: "'Syne', sans-serif",
-                  fontSize: "clamp(18px, 2.5vw, 26px)",
-                  fontWeight: 300,
-                  color: "#ffffff",
-                  letterSpacing: "0.05em",
-                }}>
-                  &amp;
-                </span>
+                <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(18px, 2.5vw, 26px)", fontWeight: 300, color: "#ffffff", letterSpacing: "0.05em" }}>&amp;</span>
                 <div>
-                  <span style={{
-                    fontFamily: "'Syne', sans-serif",
-                    fontSize: "clamp(13px, 2vw, 20px)",
-                    fontWeight: 300,
-                    color: "#ffffff",
-                    letterSpacing: "0.05em",
-                    display: "block",
-                    marginBottom: "4px",
-                  }}>
-                    I'm a
-                  </span>
-                  <span style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: "clamp(28px, 4vw, 56px)",
-                    lineHeight: 0.9,
-                    whiteSpace: "nowrap",
-                  }}>
+                  <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(13px, 2vw, 20px)", fontWeight: 300, color: "#ffffff", letterSpacing: "0.05em", display: "block", marginBottom: "4px" }}>I'm a</span>
+                  <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(28px, 4vw, 56px)", lineHeight: 0.9, whiteSpace: "nowrap" }}>
                     <span style={{ color: "#ffffff" }}>FULL STACK </span>
-                    <span style={{ color: "#38bdf8"  }}>SOFTWARE ENGINEER</span>
+                    <span style={{ color: "#38bdf8" }}>SOFTWARE ENGINEER</span>
                   </span>
                 </div>
               </div>
 
-              {/* Separator — sits between role line and description */}
-              <div style={{
-                width: "48px",
-                height: "1px",
-                background: "linear-gradient(90deg, #22d3ee, rgba(34,211,238,0.2))",
-                margin: "20px 0",
-              }} />
+              {/* Separator */}
+              <div style={{ width: "48px", height: "1px", background: "linear-gradient(90deg, #22d3ee, rgba(34,211,238,0.2))", margin: "20px 0" }} />
 
               {/* Description */}
               <div style={{ maxWidth: "540px", marginBottom: "32px" }}>
-                <p style={{
-                  color: "#8aa0d2",
-                  fontSize: "clamp(13px, 1.5vw, 14px)",
-                  lineHeight: 1.75,
-                  fontWeight: 300,
-                }}>
+                <p style={{ color: "#8aa0d2", fontSize: "clamp(13px, 1.5vw, 14px)", lineHeight: 1.75, fontWeight: 300 }}>
                   South Africa has millions of skilled artisans with no digital presence.{" "}
                   <span style={{ color: "#cdd7ff", fontWeight: 500 }}>I'm helping fix that</span>{" "}
                   as a Junior Developer Intern at{" "}
                   <span style={{ color: "#cdd7ff", fontWeight: 500 }}>Zaio Institute of Technology</span>,
                   {" "}building full stack solutions daily for the{" "}
                   <span style={{ color: "#22d3ee", fontWeight: 500 }}>iKhono Africa</span>
-                  {" "}startup web application based in Durban and contributing to a platform that mitigates real world impact.
+                  {" "}startup web application and contributing to a platform that mitigates real world impact.
                 </p>
               </div>
 
-              {/* ── MOBILE ONLY: terminal card fills the block ── */}
+              {/* ── MOBILE ONLY: terminal ── */}
               <div className="mobile-terminal-full">
                 <div style={{ display: "flex", alignItems: "center", gap: "6px", padding: "10px 14px", background: "#161b22", borderBottom: "1px solid #1a2a4a", borderRadius: "12px 12px 0 0" }}>
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
@@ -864,75 +603,29 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* CTA Buttons */}
               <div className="cta-buttons" style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "32px" }}>
                 <motion.button
                   onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  style={{
-                    padding: "13px 28px",
-                    background: "#22d3ee",
-                    color: "#020617",
-                    fontSize: "10px",
-                    fontFamily: "'DM Mono', monospace",
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    border: "1px solid #22d3ee",
-                    cursor: "pointer",
-                    fontWeight: 600,
-                    transition: "background 0.2s, color 0.2s, box-shadow 0.2s",
-                    boxShadow: "0 0 0 0 rgba(34,211,238,0)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "transparent";
-                    e.currentTarget.style.color = "#22d3ee";
-                    e.currentTarget.style.boxShadow = "0 0 18px rgba(34,211,238,0.25)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "#22d3ee";
-                    e.currentTarget.style.color = "#020617";
-                    e.currentTarget.style.boxShadow = "0 0 0 0 rgba(34,211,238,0)";
-                  }}
+                  whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
+                  style={{ padding: "13px 28px", background: "#22d3ee", color: "#020617", fontSize: "10px", fontFamily: "'DM Mono', monospace", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #22d3ee", cursor: "pointer", fontWeight: 600, transition: "background 0.2s, color 0.2s, box-shadow 0.2s", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#22d3ee"; e.currentTarget.style.boxShadow = "0 0 18px rgba(34,211,238,0.25)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "#22d3ee"; e.currentTarget.style.color = "#020617"; e.currentTarget.style.boxShadow = "0 0 0 0 rgba(34,211,238,0)"; }}
                 >
                   ./view work
                 </motion.button>
                 <motion.a
-                  href="/Anele-Nqabeni-Resume.pdf.pdf"
-                  download
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  style={{
-                    padding: "13px 28px",
-                    background: "transparent",
-                    color: "#22d3ee",
-                    fontSize: "10px",
-                    fontFamily: "'DM Mono', monospace",
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    border: "1px solid rgba(34,211,238,0.4)",
-                    cursor: "pointer",
-                    textDecoration: "none",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s",
-                    boxShadow: "0 0 0 0 rgba(34,211,238,0)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(34,211,238,0.08)";
-                    e.currentTarget.style.borderColor = "#22d3ee";
-                    e.currentTarget.style.boxShadow = "0 0 18px rgba(34,211,238,0.18)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "transparent";
-                    e.currentTarget.style.borderColor = "rgba(34,211,238,0.4)";
-                    e.currentTarget.style.boxShadow = "0 0 0 0 rgba(34,211,238,0)";
-                  }}
+                  href="/Anele-Nqabeni-Resume.pdf.pdf" download
+                  whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
+                  style={{ padding: "13px 28px", background: "transparent", color: "#22d3ee", fontSize: "10px", fontFamily: "'DM Mono', monospace", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(34,211,238,0.4)", cursor: "pointer", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(34,211,238,0.08)"; e.currentTarget.style.borderColor = "#22d3ee"; e.currentTarget.style.boxShadow = "0 0 18px rgba(34,211,238,0.18)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "rgba(34,211,238,0.4)"; e.currentTarget.style.boxShadow = "0 0 0 0 rgba(34,211,238,0)"; }}
                 >
                   <span style={{ fontSize: "12px", lineHeight: 1 }}>↓</span> download cv
                 </motion.a>
               </div>
 
+              {/* Stats */}
               <div className="stats-row" style={{ display: "flex", gap: "36px", flexWrap: "wrap" }}>
                 {[["1+", "Years Exp."], ["4", "Projects"], ["8+", "Programming Languages"]].map(([val, label]) => (
                   <div key={label} style={{ textAlign: "center" }}>
@@ -944,32 +637,15 @@ export default function Home() {
             </div>
 
             {/* Right: photo + terminal — desktop only */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.75, delay: 0.3 }}
-              className="hero-image-wrap"
-            >
+            <motion.div initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.75, delay: 0.3 }} className="hero-image-wrap">
               <div className="hero-photo-ring" style={{ animation: "float 3s ease-in-out infinite" }}>
-                <img
-                  src="/anele.jpeg"
-                  alt="Anele Nqabeni"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: "50%",
-                    background: "#0b1226",
-                    transition: "transform 0.5s ease",
-                  }}
+                <img src="/anele.jpeg" alt="Anele Nqabeni" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", background: "#0b1226", transition: "transform 0.5s ease" }}
                   onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.1) rotate(3deg)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1) rotate(0deg)"; }}
                   onTouchStart={(e) => { e.currentTarget.style.transform = "scale(1.1) rotate(3deg)"; }}
                   onTouchEnd={(e) => { e.currentTarget.style.transform = "scale(1) rotate(0deg)"; }}
                 />
               </div>
-
-              {/* Terminal block */}
               <div className="terminal-block">
                 <div style={{ display: "flex", alignItems: "center", gap: "6px", padding: "10px 14px", background: "#161b22", borderBottom: "1px solid #1a2a4a", borderRadius: "12px 12px 0 0" }}>
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
@@ -1000,20 +676,18 @@ export default function Home() {
           <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, color: "#fff", marginBottom: "8px" }}>About Me</h2>
           <div style={{ width: "48px", height: "2px", background: "#22d3ee" }} />
         </div>
-
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "64px", alignItems: "start" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-              I'm <span style={{ color: "#22d3ee", fontWeight: 600 }}>Anele Nqabeni</span>, a Junior Developer Intern at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Zaio Institute of Technology</span>, where I have deployed full stack solutions for <span style={{ color: "#e5e5e5", fontWeight: 600 }}>iKhono Africa</span> a startup based in Durban which helps digitise South Africa's artisan economy, working remotely from Cape Town. I'm still early in my career, but I have made every opportunity count. 
+              I'm <span style={{ color: "#22d3ee", fontWeight: 600 }}>Anele Nqabeni</span>, a Junior Developer Intern at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Zaio Institute of Technology</span>, where I have deployed full stack solutions for <span style={{ color: "#e5e5e5", fontWeight: 600 }}>iKhono Africa</span> a Durban based startup which helps digitise South Africa's artisan economy, working remotely from Cape Town.
             </p>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
-              Day to day I work across the full stack at iKhono Africa: building PHP/MySQL backend integrations together with JavaScript for the frontend, shipping features that real clients and artsans depend on. I am also crafting full stack solutions at Metrolink as a personal startup project. I previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
+              I'm still early in my career, but I have made every opportunity count. Day to day I work across the full stack at iKhono Africa: building PHP/MySQL backend integrations together with JavaScript for the frontend, shipping features that real clients and artisans depend on. I am also crafting full stack solutions at Metrolink as a personal startup project. I previously interned at <span style={{ color: "#e5e5e5", fontWeight: 600 }}>Plum Systems</span> on two live commercial property platforms.
             </p>
             <p style={{ color: "#8aa0d2", fontSize: "14px", lineHeight: 1.85, fontWeight: 300 }}>
               I hold an Advanced Diploma in ICT in Applications Development from CPUT. My drive is simple: write clean code, collaborate well, and keep improving.
             </p>
           </div>
-
           <div style={{ background: "#081327", border: "1px solid #0d1a36", borderRadius: "12px", padding: "24px", fontFamily: "'DM Mono', monospace", fontSize: "12px" }}>
             <p style={{ color: "#4a6080", marginBottom: "16px" }}>{"// anele.config.json"}</p>
             {[
@@ -1067,7 +741,6 @@ export default function Home() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1px", background: "#0d1a36" }}>
           {PROJECTS.map((p, i) => <ProjectCard key={p.name} project={p} index={i} />)}
         </div>
-
         <div style={{ marginTop: "72px" }}>
           <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.3em", color: "#7b96c5", textTransform: "uppercase", marginBottom: "28px" }}>
             Personal and Open Source Repos
@@ -1096,32 +769,17 @@ export default function Home() {
       <section id="timeline" style={{ background: "#081327", borderTop: "1px solid #0d1a36", borderBottom: "1px solid #0d1a36" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
           <div style={{ marginBottom: "64px" }}>
-            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "16px" }}>
-              04 — Timeline
-            </p>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, color: "#fff", marginBottom: "12px" }}>
-              Experience & Education
-            </h2>
+            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "16px" }}>04 — Timeline</p>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, color: "#fff", marginBottom: "12px" }}>Experience & Education</h2>
             <div style={{ width: "48px", height: "2px", background: "#22d3ee" }} />
           </div>
           <div style={{ position: "relative", paddingLeft: "32px", borderLeft: "1px solid #0d1a36" }}>
             {TIMELINE.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                style={{ position: "relative", marginBottom: "48px" }}
-              >
+              <motion.div key={i} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} style={{ position: "relative", marginBottom: "48px" }}>
                 <div style={{ position: "absolute", left: "-40px", top: "4px", width: "14px", height: "14px", borderRadius: "50%", border: `2px solid ${item.type === "work" ? "#22d3ee" : "#7dd3fc"}`, background: "#081327" }} />
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-                  {item.period}
-                </span>
+                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.15em", textTransform: "uppercase" }}>{item.period}</span>
                 <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#e5e5e5", margin: "8px 0 4px", lineHeight: 1.3 }}>{item.role}</h3>
-                <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#444", marginBottom: "10px" }}>
-                  {item.org} · {item.location}
-                </p>
+                <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#444", marginBottom: "10px" }}>{item.org} · {item.location}</p>
                 <p style={{ fontSize: "12px", color: "#7b96c5", lineHeight: 1.85, fontWeight: 300, maxWidth: "600px" }}>{item.desc}</p>
               </motion.div>
             ))}
@@ -1135,17 +793,14 @@ export default function Home() {
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.3em", color: "#22d3ee", textTransform: "uppercase", flexShrink: 0 }}>05 — Contact</span>
           <div style={{ flex: 1, height: "1px", background: "#12213a" }} />
         </div>
-
         <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(32px, 5vw, 52px)", color: "#fff", marginBottom: "16px" }}>
           Contact
         </motion.h2>
         <div style={{ width: "48px", height: "2px", background: "#22d3ee", marginBottom: "32px" }} />
-
         <p style={{ color: "#8aa0d2", fontSize: "13px", lineHeight: 1.85, maxWidth: "440px", fontWeight: 300, marginBottom: "48px" }}>
           I'm open to new opportunities, collaborations, or just a good conversation about tech. Reach out and I'll respond fast.
         </p>
-
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
           {[
             { icon: "@", label: "Email", value: "anele.nqabeni01@gmail.com", href: "mailto:anele.nqabeni01@gmail.com" },
@@ -1153,8 +808,7 @@ export default function Home() {
             { icon: "in", label: "LinkedIn", value: "anele-nqabeni-b719691aa", href: "https://www.linkedin.com/in/anele-nqabeni-b719691aa" },
             { icon: "☎", label: "Phone", value: "+27 67 876 2327", href: "tel:+27678762327" },
           ].map(({ icon, label, value, href }) => (
-            <a key={label} href={href}
-              target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
+            <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
               style={{ display: "flex", alignItems: "center", gap: "14px", padding: "20px", background: "#081327", border: "1px solid #0d1a36", textDecoration: "none", transition: "border-color 0.15s" }}
               onMouseEnter={(e) => e.currentTarget.style.borderColor = "#22d3ee55"}
               onMouseLeave={(e) => e.currentTarget.style.borderColor = "#0d1a36"}>
@@ -1183,33 +837,9 @@ export default function Home() {
       {/* ── BACK TO TOP ── */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        style={{
-          position: 'fixed',
-          bottom: '20px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '28px',
-          height: '28px',
-          borderRadius: '50%',
-          background: '#081327',
-          border: '1px solid #22d3ee',
-          color: '#22d3ee',
-          fontSize: '12px',
-          cursor: 'pointer',
-          display: showBackToTop ? 'flex' : 'none',
-          alignItems: 'center',
-          justifyContent: 'center',
-          transition: 'all 0.2s',
-          zIndex: 1000,
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.background = '#22d3ee';
-          e.currentTarget.style.color = '#000';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.background = '#081327';
-          e.currentTarget.style.color = '#22d3ee';
-        }}
+        style={{ position: 'fixed', bottom: '20px', left: '50%', transform: 'translateX(-50%)', width: '28px', height: '28px', borderRadius: '50%', background: '#081327', border: '1px solid #22d3ee', color: '#22d3ee', fontSize: '12px', cursor: 'pointer', display: showBackToTop ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', zIndex: 1000 }}
+        onMouseEnter={(e) => { e.currentTarget.style.background = '#22d3ee'; e.currentTarget.style.color = '#000'; }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = '#081327'; e.currentTarget.style.color = '#22d3ee'; }}
       >
         ↑
       </button>
