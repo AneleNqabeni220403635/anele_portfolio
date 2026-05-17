@@ -137,7 +137,7 @@ function Typewriter({ lines, speed = 38 }) {
   }, [lineIdx, charIdx, lines, speed]);
 
   return (
-    <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", lineHeight: 1.9 }}>
+    <div style={{ fontFamily: "'Syne', sans-serif", fontSize: "10px", lineHeight: 1.9 }}>
       {lines.map((line, i) => (
         <div key={i} style={{ display: "flex", gap: "8px", minHeight: "18px" }}>
           {(i < lineIdx || (i === lineIdx && charIdx > 0)) && (
@@ -229,7 +229,7 @@ function Ticker() {
         whileDrag={{ cursor: "grabbing" }}
       >
         {repeated.map((tag, i) => (
-          <span key={i} style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.25em", color: "#dbe4ff", textTransform: "uppercase", padding: "0 24px" }}>
+          <span key={i} style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", letterSpacing: "0.25em", color: "#dbe4ff", textTransform: "uppercase", padding: "0 24px" }}>
             {tag} <span style={{ color: "#7dd3fc", margin: "0 8px" }}>◆</span>
           </span>
         ))}
@@ -245,8 +245,8 @@ function SkillBar({ name, level }) {
   return (
     <div ref={ref}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "10px" }}>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#22d3ee", letterSpacing: "0.05em" }}>{name}</span>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#4a6080" }}>{level}%</span>
+        <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "11px", color: "#22d3ee", letterSpacing: "0.05em" }}>{name}</span>
+        <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "10px", color: "#4a6080" }}>{level}%</span>
       </div>
       <div style={{ height: "6px", background: "#0d1a36", borderRadius: "999px", position: "relative", overflow: "hidden" }}>
         <motion.div
@@ -273,7 +273,7 @@ function RepoCard({ r }) {
       style={{ display: "block", padding: "20px", background: "#081327", border: `1px solid ${hovered ? "#7dd3fc" : "#0d1a36"}`, textDecoration: "none", transition: "border-color 0.15s" }}
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "10px", gap: "8px" }}>
-        <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: hovered ? "#22d3ee" : "#ccc", transition: "color 0.15s", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+        <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: "12px", color: hovered ? "#22d3ee" : "#ccc", transition: "color 0.15s", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
           {r.name}
         </h3>
         <span style={{ color: "#22d3ee", fontSize: "11px", opacity: hovered ? 1 : 0, transition: "opacity 0.15s", flexShrink: 0 }}>↗</span>
@@ -281,7 +281,7 @@ function RepoCard({ r }) {
       <p style={{ fontSize: "11px", color: "#9db9da", lineHeight: 1.7, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", marginBottom: "16px" }}>
         {r.description || "No description."}
       </p>
-      <div style={{ display: "flex", gap: "16px", fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#a8c1eb" }}>
+      <div style={{ display: "flex", gap: "16px", fontFamily: "'Syne', sans-serif", fontSize: "9px", color: "#a8c1eb" }}>
         {r.language && (
           <span style={{ display: "flex", alignItems: "center", gap: "6px" }}>
             <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#22d3ee" }} />
@@ -318,17 +318,17 @@ function ProjectCard({ project, index }) {
       }}
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "8px" }}>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", letterSpacing: "0.15em", textTransform: "uppercase", padding: "3px 10px", border: `1px solid ${project.badge === "LIVE" ? "#22d3ee" : "#0c1d3d"}`, color: project.badge === "LIVE" ? "#22d3ee" : "#9cb2ff" }}>
+        <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "8px", letterSpacing: "0.15em", textTransform: "uppercase", padding: "3px 10px", border: `1px solid ${project.badge === "LIVE" ? "#22d3ee" : "#0c1d3d"}`, color: project.badge === "LIVE" ? "#22d3ee" : "#9cb2ff" }}>
           {project.badge}
         </span>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#2a3a5a" }}>{project.period}</span>
+        <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", color: "#2a3a5a" }}>{project.period}</span>
       </div>
       <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(24px, 3vw, 36px)", lineHeight: 1, color: "#fff" }}>{project.name}</h3>
-      <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#9ecbff", letterSpacing: "0.08em" }}>{project.tech.join("  ·  ")}</p>
+      <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", color: "#9ecbff", letterSpacing: "0.08em" }}>{project.tech.join("  ·  ")}</p>
       <p style={{ fontSize: "12px", color: "#97b1d2", lineHeight: 1.85, fontWeight: 300, flex: 1 }}>{project.desc}</p>
       {project.link && (
         <a href={project.link} target="_blank" rel="noreferrer"
-          style={{ alignSelf: "flex-start", padding: "8px 16px", border: "1px solid #22d3ee", color: "#22d3ee", fontSize: "8px", fontFamily: "'DM Mono', monospace", letterSpacing: "0.2em", textTransform: "uppercase", textDecoration: "none", transition: "all 0.15s" }}
+          style={{ alignSelf: "flex-start", padding: "8px 16px", border: "1px solid #22d3ee", color: "#22d3ee", fontSize: "8px", fontFamily: "'Syne', sans-serif", letterSpacing: "0.2em", textTransform: "uppercase", textDecoration: "none", transition: "all 0.15s" }}
           onMouseEnter={(e) => { e.currentTarget.style.background = "#22d3ee"; e.currentTarget.style.color = "#000"; }}
           onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#22d3ee"; }}>
           Visit ↗
@@ -365,12 +365,12 @@ function Nav() {
       }} />
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "18px", letterSpacing: "0.25em", color: "#22d3ee" }}>
-          AN<span style={{ color: "#ffffff", opacity: 0.35 }}>.</span><span style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", letterSpacing: "0.1em", color: "#ffffff", opacity: 0.5, fontWeight: 400 }}>dev</span>
+          AN<span style={{ color: "#ffffff", opacity: 0.35 }}>.</span><span style={{ fontFamily: "'Syne', sans-serif", fontSize: "13px", letterSpacing: "0.1em", color: "#ffffff", opacity: 0.5, fontWeight: 400 }}>dev</span>
         </span>
         <div className="nav-links" style={{ display: "flex", gap: "32px" }}>
           {links.map((l) => (
             <button key={l} onClick={() => scroll(l)}
-              style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.25em", textTransform: "uppercase", color: "#9acafc", background: "none", border: "none", cursor: "pointer", transition: "color 0.2s", position: "relative", padding: "4px 0" }}
+              style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", letterSpacing: "0.25em", textTransform: "uppercase", color: "#9acafc", background: "none", border: "none", cursor: "pointer", transition: "color 0.2s", position: "relative", padding: "4px 0" }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = "#22d3ee";
                 const line = e.currentTarget.querySelector(".nav-underline");
@@ -390,7 +390,7 @@ function Nav() {
         <a
           href="/Anele-Nqabeni-Resume.pdf.pdf"
           download
-          style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.2em", textTransform: "uppercase", padding: "8px 16px", border: "1px solid rgba(34,211,238,0.4)", color: "#22d3ee", textDecoration: "none", transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s", display: "inline-flex", alignItems: "center", gap: "6px", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
+          style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", letterSpacing: "0.2em", textTransform: "uppercase", padding: "8px 16px", border: "1px solid rgba(34,211,238,0.4)", color: "#22d3ee", textDecoration: "none", transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s", display: "inline-flex", alignItems: "center", gap: "6px", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
           onMouseEnter={(e) => {
             e.currentTarget.style.background = "#22d3ee";
             e.currentTarget.style.color = "#020617";
@@ -596,7 +596,7 @@ export default function Home() {
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#febc2e" }} />
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28c840" }} />
-                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#4a6080", marginLeft: "8px" }}>anele@ikhono.africa ~ zsh</span>
+                  <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "10px", color: "#4a6080", marginLeft: "8px" }}>anele@ikhono.africa ~ zsh</span>
                 </div>
                 <div style={{ padding: "16px", minHeight: "160px" }}>
                   <Typewriter lines={terminalLines} speed={36} />
@@ -608,7 +608,7 @@ export default function Home() {
                 <motion.button
                   onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
                   whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-                  style={{ padding: "13px 28px", background: "#22d3ee", color: "#020617", fontSize: "10px", fontFamily: "'DM Mono', monospace", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #22d3ee", cursor: "pointer", fontWeight: 600, transition: "background 0.2s, color 0.2s, box-shadow 0.2s", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
+                  style={{ padding: "13px 28px", background: "#22d3ee", color: "#020617", fontSize: "10px", fontFamily: "'Syne', sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #22d3ee", cursor: "pointer", fontWeight: 600, transition: "background 0.2s, color 0.2s, box-shadow 0.2s", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#22d3ee"; e.currentTarget.style.boxShadow = "0 0 18px rgba(34,211,238,0.25)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = "#22d3ee"; e.currentTarget.style.color = "#020617"; e.currentTarget.style.boxShadow = "0 0 0 0 rgba(34,211,238,0)"; }}
                 >
@@ -617,7 +617,7 @@ export default function Home() {
                 <motion.a
                   href="/Anele-Nqabeni-Resume.pdf.pdf" download
                   whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-                  style={{ padding: "13px 28px", background: "transparent", color: "#22d3ee", fontSize: "10px", fontFamily: "'DM Mono', monospace", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(34,211,238,0.4)", cursor: "pointer", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
+                  style={{ padding: "13px 28px", background: "transparent", color: "#22d3ee", fontSize: "10px", fontFamily: "'Syne', sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(34,211,238,0.4)", cursor: "pointer", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(34,211,238,0.08)"; e.currentTarget.style.borderColor = "#22d3ee"; e.currentTarget.style.boxShadow = "0 0 18px rgba(34,211,238,0.18)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "rgba(34,211,238,0.4)"; e.currentTarget.style.boxShadow = "0 0 0 0 rgba(34,211,238,0)"; }}
                 >
@@ -630,7 +630,7 @@ export default function Home() {
                 {[["1+", "Years Exp."], ["4", "Projects"], ["8+", "Programming Languages"]].map(([val, label]) => (
                   <div key={label} style={{ textAlign: "center" }}>
                     <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "44px", lineHeight: 1, color: "#22d3ee" }}>{val}</p>
-                    <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", letterSpacing: "0.22em", color: "#9ecbff", textTransform: "uppercase", marginTop: "4px" }}>{label}</p>
+                    <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "8px", letterSpacing: "0.22em", color: "#9ecbff", textTransform: "uppercase", marginTop: "4px" }}>{label}</p>
                   </div>
                 ))}
               </div>
@@ -651,7 +651,7 @@ export default function Home() {
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#febc2e" }} />
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28c840" }} />
-                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#4a6080", marginLeft: "8px" }}>anele@ikhono.africa ~ zsh</span>
+                  <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "10px", color: "#4a6080", marginLeft: "8px" }}>anele@ikhono.africa ~ zsh</span>
                 </div>
                 <div style={{ padding: "16px", minHeight: "160px" }}>
                   <Typewriter lines={terminalLines} speed={36} />
@@ -667,10 +667,10 @@ export default function Home() {
       {/* ── ABOUT ── */}
       <section id="about" style={{ maxWidth: "1280px", margin: "0 auto", padding: "56px 24px 100px" }}>
         <div style={{ marginBottom: "48px" }}>
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "4px" }}>
+          <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "4px" }}>
             ~/portfolio <span style={{ color: "#4a6080" }}>on</span> <span style={{ color: "#a78bfa" }}>main</span>
           </p>
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#4a6080", marginBottom: "20px" }}>
+          <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "12px", color: "#4a6080", marginBottom: "20px" }}>
             <span style={{ color: "#22d3ee" }}>$</span> cat about.md
           </p>
           <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, color: "#fff", marginBottom: "8px" }}>About Me</h2>
@@ -688,7 +688,7 @@ export default function Home() {
               I hold an Advanced Diploma in ICT in Applications Development from CPUT. My drive is simple: write clean code, collaborate well, and keep improving.
             </p>
           </div>
-          <div style={{ background: "#081327", border: "1px solid #0d1a36", borderRadius: "12px", padding: "24px", fontFamily: "'DM Mono', monospace", fontSize: "12px" }}>
+          <div style={{ background: "#081327", border: "1px solid #0d1a36", borderRadius: "12px", padding: "24px", fontFamily: "'Syne', sans-serif", fontSize: "12px" }}>
             <p style={{ color: "#4a6080", marginBottom: "16px" }}>{"// anele.config.json"}</p>
             {[
               ["name", '"Anele Nqabeni"', "#c084fc"],
@@ -715,16 +715,16 @@ export default function Home() {
       <section id="skills" style={{ background: "#081327", borderTop: "1px solid #0d1a36", borderBottom: "1px solid #0d1a36" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "64px" }}>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.3em", color: "#22d3ee", textTransform: "uppercase", flexShrink: 0 }}>02 — Skills</span>
+            <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", letterSpacing: "0.3em", color: "#22d3ee", textTransform: "uppercase", flexShrink: 0 }}>02 — Skills</span>
             <div style={{ flex: 1, height: "1px", background: "#12213a" }} />
-            <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "56px", color: "#7b94ce", lineHeight: 1, flexShrink: 0 }}>TECH STACK</span>
+            <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "56px", color: "#7b94ce", lineHeight: 1, flexShrink: 0 }}>STACK</span>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "32px 80px", marginBottom: "48px" }}>
             {SKILLS.map((s) => <SkillBar key={s.name} {...s} />)}
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
             {TICKER_TAGS.map((tag) => (
-              <span key={tag} style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.12em", padding: "6px 14px", border: "1px solid #0d1a36", color: "#7b96c5", textTransform: "uppercase", background: "#061027", cursor: "default" }}>
+              <span key={tag} style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", letterSpacing: "0.12em", padding: "6px 14px", border: "1px solid #0d1a36", color: "#7b96c5", textTransform: "uppercase", background: "#061027", cursor: "default" }}>
                 {tag}
               </span>
             ))}
@@ -735,20 +735,20 @@ export default function Home() {
       {/* ── PROJECTS ── */}
       <section id="projects" style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "64px" }}>
-          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.3em", color: "#22d3ee", textTransform: "uppercase", flexShrink: 0 }}>03 — Projects</span>
+          <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", letterSpacing: "0.3em", color: "#22d3ee", textTransform: "uppercase", flexShrink: 0 }}>03 — Projects</span>
           <div style={{ flex: 1, height: "1px", background: "#12213a" }} />
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1px", background: "#0d1a36" }}>
           {PROJECTS.map((p, i) => <ProjectCard key={p.name} project={p} index={i} />)}
         </div>
         <div style={{ marginTop: "72px" }}>
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.3em", color: "#7b96c5", textTransform: "uppercase", marginBottom: "28px" }}>
+          <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", letterSpacing: "0.3em", color: "#7b96c5", textTransform: "uppercase", marginBottom: "28px" }}>
             Personal and Open Source Repos
           </p>
           {loading ? (
-            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#7b96c5" }}>fetching repos...</p>
+            <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "11px", color: "#7b96c5" }}>fetching repos...</p>
           ) : repos.length === 0 ? (
-            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#7b96c5" }}>Coming soon.</p>
+            <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "11px", color: "#7b96c5" }}>Coming soon.</p>
           ) : (
             <motion.div
               style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "1px", background: "#091a2c" }}
@@ -769,7 +769,7 @@ export default function Home() {
       <section id="timeline" style={{ background: "#081327", borderTop: "1px solid #0d1a36", borderBottom: "1px solid #0d1a36" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
           <div style={{ marginBottom: "64px" }}>
-            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "16px" }}>04 — Timeline</p>
+            <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "16px" }}>04 — Timeline</p>
             <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, color: "#fff", marginBottom: "12px" }}>Experience & Education</h2>
             <div style={{ width: "48px", height: "2px", background: "#22d3ee" }} />
           </div>
@@ -777,9 +777,9 @@ export default function Home() {
             {TIMELINE.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} style={{ position: "relative", marginBottom: "48px" }}>
                 <div style={{ position: "absolute", left: "-40px", top: "4px", width: "14px", height: "14px", borderRadius: "50%", border: `2px solid ${item.type === "work" ? "#22d3ee" : "#7dd3fc"}`, background: "#081327" }} />
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.15em", textTransform: "uppercase" }}>{item.period}</span>
+                <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", color: "#22d3ee", letterSpacing: "0.15em", textTransform: "uppercase" }}>{item.period}</span>
                 <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#e5e5e5", margin: "8px 0 4px", lineHeight: 1.3 }}>{item.role}</h3>
-                <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#444", marginBottom: "10px" }}>{item.org} · {item.location}</p>
+                <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "10px", color: "#444", marginBottom: "10px" }}>{item.org} · {item.location}</p>
                 <p style={{ fontSize: "12px", color: "#7b96c5", lineHeight: 1.85, fontWeight: 300, maxWidth: "600px" }}>{item.desc}</p>
               </motion.div>
             ))}
@@ -790,7 +790,7 @@ export default function Home() {
       {/* ── CONTACT ── */}
       <section id="contact" style={{ maxWidth: "1280px", margin: "0 auto", padding: "100px 24px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "48px" }}>
-          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.3em", color: "#22d3ee", textTransform: "uppercase", flexShrink: 0 }}>05 — Contact</span>
+          <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", letterSpacing: "0.3em", color: "#22d3ee", textTransform: "uppercase", flexShrink: 0 }}>05 — Contact</span>
           <div style={{ flex: 1, height: "1px", background: "#12213a" }} />
         </div>
         <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -812,9 +812,9 @@ export default function Home() {
               style={{ display: "flex", alignItems: "center", gap: "14px", padding: "20px", background: "#081327", border: "1px solid #0d1a36", textDecoration: "none", transition: "border-color 0.15s" }}
               onMouseEnter={(e) => e.currentTarget.style.borderColor = "#22d3ee55"}
               onMouseLeave={(e) => e.currentTarget.style.borderColor = "#0d1a36"}>
-              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: "#22d3ee", width: "20px", textAlign: "center", flexShrink: 0 }}>{icon}</span>
+              <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "13px", color: "#22d3ee", width: "20px", textAlign: "center", flexShrink: 0 }}>{icon}</span>
               <div>
-                <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", color: "#4a6080", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "4px" }}>{label}</p>
+                <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "8px", color: "#4a6080", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "4px" }}>{label}</p>
                 <p style={{ fontSize: "12px", color: "#8aa0d2" }}>{value}</p>
               </div>
             </a>
@@ -825,10 +825,10 @@ export default function Home() {
       {/* ── FOOTER ── */}
       <footer style={{ borderTop: "1px solid #0d1a36", padding: "28px 24px" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "10px" }}>
-          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", letterSpacing: "0.2em", color: "#1e2a4b", textTransform: "uppercase" }}>
+          <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "8px", letterSpacing: "0.2em", color: "#1e2a4b", textTransform: "uppercase" }}>
             © {new Date().getFullYear()} Anele Nqabeni · Cape Town, South Africa
           </span>
-          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "8px", letterSpacing: "0.2em", color: "#162d57", textTransform: "uppercase" }}>
+          <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "8px", letterSpacing: "0.2em", color: "#162d57", textTransform: "uppercase" }}>
             · Deployed by Anele Nqabeni
           </span>
         </div>
