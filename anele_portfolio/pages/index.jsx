@@ -198,17 +198,7 @@ function Ticker() {
   });
 
   return (
-    <div
-      style={{
-        overflow: "hidden",
-        borderTop: "1px solid rgba(34,211,238,0.12)",
-        borderBottom: "1px solid rgba(34,211,238,0.12)",
-        padding: "12px 0",
-        background: "#071229",
-        cursor: "grab",
-        userSelect: "none",
-      }}
-    >
+    <div style={{ overflow: "hidden", borderTop: "1px solid rgba(34,211,238,0.12)", borderBottom: "1px solid rgba(34,211,238,0.12)", padding: "12px 0", background: "#071229", cursor: "grab", userSelect: "none" }}>
       <motion.div
         ref={stripRef}
         style={{ display: "flex", gap: "0", whiteSpace: "nowrap", x }}
@@ -255,6 +245,80 @@ function SkillBar({ name, level }) {
           animate={{ width: inView ? `${level}%` : 0 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
         />
+      </div>
+    </div>
+  );
+}
+
+// ── eKasi Board pinned card ────────────────────────────────────────────────
+function EkasiCard() {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        display: 'flex', flexDirection: 'column', padding: '20px',
+        background: '#081327',
+        border: `1px solid ${hovered ? '#7dd3fc' : '#0d1a36'}`,
+        transition: 'border-color 0.15s',
+        height: '100%',
+      }}
+    >
+      {/* Mac dots */}
+      <div style={{ display: 'flex', gap: '5px', marginBottom: '14px' }}>
+        <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ff5f57' }} />
+        <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#febc2e' }} />
+        <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#28c840' }} />
+      </div>
+
+      {/* Repo path */}
+      <p style={{ fontFamily: "'Syne', sans-serif", fontSize: '9px', color: '#22d3ee', letterSpacing: '0.12em', marginBottom: '10px' }}>
+        repo <span style={{ color: '#4a6080' }}>/ekasiboard</span>
+      </p>
+
+      {/* Name */}
+      <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '12px', color: hovered ? '#22d3ee' : '#ccc', transition: 'color 0.15s', marginBottom: '10px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+        ekasiboard
+      </h3>
+
+      {/* Description */}
+      <p style={{ fontSize: '11px', color: '#9db9da', lineHeight: 1.7, marginBottom: '16px', flex: 1, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+        Full-stack community notice board for C-Section, Khayelitsha. Built with React & Supabase — auth, real-time data, file storage, and interactive maps. 🏘️
+      </p>
+
+      {/* Language + stats */}
+      <div style={{ display: 'flex', gap: '16px', fontFamily: "'Syne', sans-serif", fontSize: '9px', color: '#a8c1eb', marginBottom: '16px' }}>
+        <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22d3ee' }} />
+          JavaScript
+        </span>
+        <span>★ 0</span>
+        <span>⑂ 0</span>
+      </div>
+
+      {/* Buttons */}
+      <div style={{ display: 'flex', gap: '8px' }}>
+        <a
+          href="https://github.com/AneleNqabeni220403635/ekasiboard"
+          target="_blank"
+          rel="noreferrer"
+          style={{ flex: 1, padding: '8px 12px', border: '1px solid #0d1a36', color: '#9db9da', fontSize: '9px', fontFamily: "'Syne', sans-serif", letterSpacing: '0.15em', textTransform: 'uppercase', textDecoration: 'none', textAlign: 'center', transition: 'border-color 0.15s, color 0.15s' }}
+          onMouseEnter={e => { e.currentTarget.style.borderColor = '#22d3ee55'; e.currentTarget.style.color = '#22d3ee'; }}
+          onMouseLeave={e => { e.currentTarget.style.borderColor = '#0d1a36'; e.currentTarget.style.color = '#9db9da'; }}
+        >
+          &lt;/&gt; code
+        </a>
+        <a
+          href="https://ekasiboard.vercel.app"
+          target="_blank"
+          rel="noreferrer"
+          style={{ flex: 1, padding: '8px 12px', border: '1px solid #22d3ee', background: 'rgba(34,211,238,0.08)', color: '#22d3ee', fontSize: '9px', fontFamily: "'Syne', sans-serif", letterSpacing: '0.15em', textTransform: 'uppercase', textDecoration: 'none', textAlign: 'center', transition: 'background 0.15s, color 0.15s' }}
+          onMouseEnter={e => { e.currentTarget.style.background = '#22d3ee'; e.currentTarget.style.color = '#000'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(34,211,238,0.08)'; e.currentTarget.style.color = '#22d3ee'; }}
+        >
+          ↗ live
+        </a>
       </div>
     </div>
   );
@@ -358,11 +422,7 @@ function Nav() {
       borderBottom: scrolled ? "1px solid rgba(34,211,238,0.18)" : "1px solid transparent",
       backdropFilter: scrolled ? "blur(18px)" : "none",
     }}>
-      <div style={{
-        position: "absolute", bottom: 0, left: 0, right: 0, height: "1px",
-        background: "linear-gradient(90deg, transparent, rgba(34,211,238,0.35) 20%, rgba(34,211,238,0.35) 80%, transparent)",
-        pointerEvents: "none",
-      }} />
+      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "1px", background: "linear-gradient(90deg, transparent, rgba(34,211,238,0.35) 20%, rgba(34,211,238,0.35) 80%, transparent)", pointerEvents: "none" }} />
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "18px", letterSpacing: "0.25em", color: "#22d3ee" }}>
           AN<span style={{ color: "#ffffff", opacity: 0.35 }}>.</span><span style={{ fontFamily: "'Syne', sans-serif", fontSize: "13px", letterSpacing: "0.1em", color: "#ffffff", opacity: 0.5, fontWeight: 400 }}>dev</span>
@@ -371,16 +431,8 @@ function Nav() {
           {links.map((l) => (
             <button key={l} onClick={() => scroll(l)}
               style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", letterSpacing: "0.25em", textTransform: "uppercase", color: "#9acafc", background: "none", border: "none", cursor: "pointer", transition: "color 0.2s", position: "relative", padding: "4px 0" }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#22d3ee";
-                const line = e.currentTarget.querySelector(".nav-underline");
-                if (line) line.style.width = "100%";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "#9acafc";
-                const line = e.currentTarget.querySelector(".nav-underline");
-                if (line) line.style.width = "0%";
-              }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#22d3ee"; const line = e.currentTarget.querySelector(".nav-underline"); if (line) line.style.width = "100%"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "#9acafc"; const line = e.currentTarget.querySelector(".nav-underline"); if (line) line.style.width = "0%"; }}
             >
               ./{l}
               <span className="nav-underline" style={{ position: "absolute", bottom: "-2px", left: 0, width: "0%", height: "1px", background: "#22d3ee", transition: "width 0.2s ease", display: "block" }} />
@@ -388,21 +440,10 @@ function Nav() {
           ))}
         </div>
         <a
-          href="/Anele-Nqabeni-Resume.pdf.pdf"
-          download
+          href="/Anele-Nqabeni-Resume.pdf.pdf" download
           style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", letterSpacing: "0.2em", textTransform: "uppercase", padding: "8px 16px", border: "1px solid rgba(34,211,238,0.4)", color: "#22d3ee", textDecoration: "none", transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s", display: "inline-flex", alignItems: "center", gap: "6px", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = "#22d3ee";
-            e.currentTarget.style.color = "#020617";
-            e.currentTarget.style.borderColor = "#22d3ee";
-            e.currentTarget.style.boxShadow = "0 0 16px rgba(34,211,238,0.3)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = "transparent";
-            e.currentTarget.style.color = "#22d3ee";
-            e.currentTarget.style.borderColor = "rgba(34,211,238,0.4)";
-            e.currentTarget.style.boxShadow = "0 0 0 0 rgba(34,211,238,0)";
-          }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = "#22d3ee"; e.currentTarget.style.color = "#020617"; e.currentTarget.style.borderColor = "#22d3ee"; e.currentTarget.style.boxShadow = "0 0 16px rgba(34,211,238,0.3)"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#22d3ee"; e.currentTarget.style.borderColor = "rgba(34,211,238,0.4)"; e.currentTarget.style.boxShadow = "0 0 0 0 rgba(34,211,238,0)"; }}
         >
           <span style={{ fontSize: "11px" }}>↓</span> cv
         </a>
@@ -486,7 +527,6 @@ export default function Home() {
         .hero-heading { font-family: 'Space Grotesk', sans-serif; font-size: clamp(58px, 7.5vw, 90px); font-weight: 800; line-height: 0.92; color: #fff; }
         .glow-text { text-shadow: 0 0 18px rgba(52,211,153,0.25), 0 0 54px rgba(16,185,129,0.2); }
         .text-sky-400 { color: #38bdf8; }
-        .text-sky-400 { color: #38bdf8; }
         .hero-grid::before {
           content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
           background-image: linear-gradient(rgba(52,211,153,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(52,211,153,0.04) 1px, transparent 1px);
@@ -528,18 +568,12 @@ export default function Home() {
       <section className="hero-grid" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "80px 0 48px", position: "relative", overflow: "hidden", borderBottom: "1px solid rgba(34,211,238,0.12)" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", width: "100%", position: "relative", zIndex: 2 }}>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.1 }} className="hero-mobile-grid">
-
-            {/* Left: text content */}
             <div>
-              {/* ── MOBILE ONLY: photo + heading row ── */}
               <div className="mobile-photo-row" style={{ marginBottom: "0", alignItems: "flex-start", gap: isMobile ? "12px" : "16px" }}>
                 <div style={{ flex: 1, marginBottom: "0", margin: "0", padding: "0" }}>
                   <h1 className="hero-heading glow-text" style={{ paddingBottom: "0", margin: "0", paddingTop: "0" }}>
-                    <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "18px", fontWeight: 300, color: "#ffffff", letterSpacing: "0.05em", display: "block", marginBottom: "8px", textTransform: "none" }}>
-                      Hi, I'm
-                    </span>
-                    ANELE<br />
-                    <span className="text-sky-400">NQABENI</span>
+                    <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "18px", fontWeight: 300, color: "#ffffff", letterSpacing: "0.05em", display: "block", marginBottom: "8px", textTransform: "none" }}>Hi, I'm</span>
+                    ANELE<br /><span className="text-sky-400">NQABENI</span>
                   </h1>
                 </div>
                 <div style={{ width: isMobile ? "120px" : "160px", height: isMobile ? "120px" : "160px", borderRadius: "50%", padding: "6px", background: "linear-gradient(135deg, rgba(34,211,238,0.25), rgba(99,102,241,0.2))", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 20px 40px rgba(0,0,0,0.3)", flexShrink: 0, animation: "float 3s ease-in-out infinite" }}>
@@ -552,20 +586,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* ── Desktop-only heading ── */}
               {!isMobile && (
                 <div className="desktop-heading" style={{ margin: "0", padding: "0" }}>
                   <h1 className="hero-heading glow-text" style={{ margin: "0", padding: "0" }}>
-                    <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(18px, 2.5vw, 26px)", fontWeight: 300, color: "#ffffff", letterSpacing: "0.05em", display: "block", marginBottom: "16px", textTransform: "none" }}>
-                      Hi, I'm
-                    </span>
-                    ANELE<br />
-                    <span className="text-sky-400">NQABENI</span>
+                    <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(18px, 2.5vw, 26px)", fontWeight: 300, color: "#ffffff", letterSpacing: "0.05em", display: "block", marginBottom: "16px", textTransform: "none" }}>Hi, I'm</span>
+                    ANELE<br /><span className="text-sky-400">NQABENI</span>
                   </h1>
                 </div>
               )}
 
-              {/* ── Role line ── */}
               <div className="mobile-role">
                 <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(18px, 2.5vw, 26px)", fontWeight: 300, color: "#ffffff", letterSpacing: "0.05em" }}>&amp;</span>
                 <div>
@@ -577,10 +606,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Separator */}
               <div style={{ width: "48px", height: "1px", background: "linear-gradient(90deg, #22d3ee, rgba(34,211,238,0.2))", margin: "20px 0" }} />
 
-              {/* Description */}
               <div style={{ maxWidth: "540px", marginBottom: "32px" }}>
                 <p style={{ color: "#8aa0d2", fontSize: "clamp(13px, 1.5vw, 14px)", lineHeight: 1.75, fontWeight: 300 }}>
                   South Africa has millions of skilled artisans with no digital presence.{" "}
@@ -593,7 +620,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* ── MOBILE ONLY: terminal ── */}
               <div className="mobile-terminal-full">
                 <div style={{ display: "flex", alignItems: "center", gap: "6px", padding: "10px 14px", background: "#161b22", borderBottom: "1px solid #1a2a4a", borderRadius: "12px 12px 0 0" }}>
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
@@ -606,7 +632,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* CTA Buttons */}
               <div className="cta-buttons" style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "32px" }}>
                 <motion.button
                   onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
@@ -628,7 +653,6 @@ export default function Home() {
                 </motion.a>
               </div>
 
-              {/* Stats */}
               <div className="stats-row" style={{ display: "flex", gap: "36px", flexWrap: "wrap" }}>
                 {[["1+", "Years Exp."], ["4", "Projects"], ["8+", "Programming Languages"]].map(([val, label]) => (
                   <div key={label} style={{ textAlign: "center" }}>
@@ -639,7 +663,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: photo + terminal — desktop only */}
             <motion.div initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.75, delay: 0.3 }} className="hero-image-wrap">
               <div className="hero-photo-ring" style={{ animation: "float 3s ease-in-out infinite" }}>
                 <img src="/anele.jpeg" alt="Anele Nqabeni" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%", background: "#0b1226", transition: "transform 0.5s ease" }}
@@ -750,14 +773,16 @@ export default function Home() {
           </p>
           {loading ? (
             <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "11px", color: "#7b96c5" }}>fetching repos...</p>
-          ) : repos.length === 0 ? (
-            <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "11px", color: "#7b96c5" }}>Coming soon.</p>
           ) : (
             <motion.div
               style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "1px", background: "#091a2c" }}
               initial="hidden" whileInView="visible" viewport={{ once: true }}
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.04 } } }}
             >
+              {/* eKasi Board — pinned */}
+              <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
+                <EkasiCard />
+              </motion.div>
               {repos.map((r) => (
                 <motion.div key={r.id} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
                   <RepoCard r={r} />
