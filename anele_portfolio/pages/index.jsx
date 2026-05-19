@@ -279,11 +279,11 @@ function EkasiCard() {
 
       {/* Name */}
       <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '18px', color: hovered ? '#22d3ee' : '#ccc', transition: 'color 0.15s', marginBottom: '10px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-        ekasiboard
+        eKasi Board
       </h3>
 
       {/* Description */}
-      <p style={{ fontSize: '11px', color: '#9db9da', lineHeight: 1.7, marginBottom: '16px', flex: 1, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+      <p style={{ fontSize: '16px', color: '#9db9da', lineHeight: 1.7, marginBottom: '16px', flex: 1, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
         Full stack community notice board for C-Section, Khayelitsha. Built with React & Supabase auth, real time data, file storage, and interactive maps. 🏘️
       </p>
 
