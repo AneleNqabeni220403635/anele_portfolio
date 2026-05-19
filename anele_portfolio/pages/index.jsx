@@ -258,7 +258,7 @@ function EkasiCard() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        display: 'flex', flexDirection: 'column', padding: '20px',
+        display: 'flex', flexDirection: 'column', padding: '32px',
         background: '#081327',
         border: `1px solid ${hovered ? '#7dd3fc' : '#0d1a36'}`,
         transition: 'border-color 0.15s',
@@ -278,13 +278,13 @@ function EkasiCard() {
       </p>
 
       {/* Name */}
-      <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '12px', color: hovered ? '#22d3ee' : '#ccc', transition: 'color 0.15s', marginBottom: '10px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+      <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '18px', color: hovered ? '#22d3ee' : '#ccc', transition: 'color 0.15s', marginBottom: '10px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
         ekasiboard
       </h3>
 
       {/* Description */}
-      <p style={{ fontSize: '11px', color: '#9db9da', lineHeight: 1.7, marginBottom: '16px', flex: 1, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-        Full-stack community notice board for C-Section, Khayelitsha. Built with React & Supabase — auth, real-time data, file storage, and interactive maps. 🏘️
+      <p style={{ fontSize: '11px', color: '#9db9da', lineHeight: 1.7, marginBottom: '16px', flex: 1, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+        Full stack community notice board for C-Section, Khayelitsha. Built with React & Supabase auth, real time data, file storage, and interactive maps. 🏘️
       </p>
 
       {/* Language + stats */}
@@ -775,7 +775,7 @@ export default function Home() {
             <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "11px", color: "#7b96c5" }}>fetching repos...</p>
           ) : (
             <motion.div
-              style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "1px", background: "#091a2c" }}
+              style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "1px", background: "#091a2c" }}
               initial="hidden" whileInView="visible" viewport={{ once: true }}
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.04 } } }}
             >
