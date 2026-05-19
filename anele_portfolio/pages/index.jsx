@@ -147,7 +147,7 @@ function Typewriter({ lines, speed = 38 }) {
               ) : (
                 <span style={{ width: "10px", flexShrink: 0 }} />
               )}
-              <span style={{ color: i % 2 === 0 ? "#e5e5e5" : "#4a6080" }}>
+              <span style={{ color: i % 2 === 0 ? "#4a6080" : "#ffffff" }}>
                 {displayed[i] ?? ""}
               </span>
               {i === lineIdx && !done && (
@@ -627,7 +627,7 @@ export default function Home() {
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#febc2e" }} />
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28c840" }} />
-                  <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "10px", color: "#4a6080", marginLeft: "8px" }}>anele@ikhono.africa ~ zsh</span>
+                  <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "10px", color: "#e5e5e5", marginLeft: "8px" }}>anele@ikhono.africa ~ zsh</span>
                 </div>
                 <div style={{ padding: "16px", minHeight: "160px" }}>
                   <Typewriter lines={terminalLines} speed={36} />
@@ -679,7 +679,7 @@ export default function Home() {
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#febc2e" }} />
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28c840" }} />
-                  <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "10px", color: "#4a6080", marginLeft: "8px" }}>anele@ikhono.africa ~ zsh</span>
+                  <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "10px", color: "#e5e5e5", marginLeft: "8px" }}>anele@ikhono.africa ~ zsh</span>
                 </div>
                 <div style={{ padding: "16px", minHeight: "160px" }}>
                   <Typewriter lines={terminalLines} speed={36} />
