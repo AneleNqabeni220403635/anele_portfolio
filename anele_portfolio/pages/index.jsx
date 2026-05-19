@@ -319,7 +319,7 @@ function EkasiCard() {
           onMouseEnter={e => { e.currentTarget.style.background = '#22d3ee'; e.currentTarget.style.color = '#000'; }}
           onMouseLeave={e => { e.currentTarget.style.background = 'rgba(34,211,238,0.08)'; e.currentTarget.style.color = '#22d3ee'; }}
         >
-          ↗ live
+         {"↗\uFE0E"} live
         </a>
       </div>
     </motion.div>
