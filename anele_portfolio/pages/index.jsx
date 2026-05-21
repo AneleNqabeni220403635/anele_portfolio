@@ -58,6 +58,15 @@ const PROJECTS = [
     desc: "Office space management platform at Plum Systems. Contributed to data migration, backend integration, and ongoing live production support.",
     link: null,
   },
+    {
+  name: "TESS7 LLC",
+  index: "04",
+  tech: ["React", "PHP", "MySQL", "JavaScript", "HTML", "CSS"],
+  period: "May 2026 – Present",
+  badge: "CONTRIBUTION",
+  desc: "Recruiting and staffing agency website. Delivered dashboards for employers to advertise jobs, professionals to upload resumes, and subscribers to manage job loss packages. Also polished UI aesthetics and integrated database connections.",
+  link: "https://tess7llc.com",
+},
 ];
 
 const TIMELINE = [
