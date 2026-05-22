@@ -23,26 +23,8 @@ const TICKER_TAGS = [
 
 const PROJECTS = [
   {
-    name: "iKhono Africa",
-    index: "01",
-    tech: ["PHP", "MySQL", "JavaScript", "HTML/CSS", "REST APIs"],
-    period: "Jan 2026 – Present",
-    badge: "LIVE",
-    desc: "South African home services platform connecting artisans and clients, formalising the minor building works sector. Full platform: service discovery, booking flow, professional profiles, client and admin dashboards, and secure backend endpoints.",
-    link: "https://ikhono.africa",
-  },
-  {
-    name: "Metrolink",
-    index: "02",
-    tech: ["C# .NET 9", "PostgreSQL", "React Native", "Expo", "Railway", "Zustand", "Axios", "SignalR", "REST APIs"],
-    period: "Jan 2026 – Present",
-    badge: "STARTUP",
-    desc: "A Cape Town transit intelligence platform unifying MyCiTi, Metrorail, and Golden Arrow schedules with crowdsourced delay reporting - built on demo APIs as early development, with live agency integration on the roadmap.",
-    link: null,
-  },
-  {
     name: "API Property",
-    index: "03",
+    index: "01",
     tech: ["React", "Joomla", "JavaScript", "Bootstrap", "MySQL", "GitLab"],
     period: "Jul 2024 – Jul 2025",
     badge: "PRODUCTION",
@@ -51,22 +33,40 @@ const PROJECTS = [
   },
   {
     name: "Officeplace",
-    index: "04",
+    index: "02",
     tech: ["React", "Node.js", "MySQL", "GitLab"],
     period: "Jul 2024 – Jul 2025",
     badge: "PRODUCTION",
     desc: "Office space management platform at Plum Systems. Contributed to data migration, backend integration, and ongoing live production support.",
     link: null,
   },
-    {
-  name: "TESS7 LLC",
-  index: "04",
-  tech: ["React", "PHP", "MySQL", "JavaScript", "HTML", "CSS"],
-  period: "May 2026 – Present",
-  badge: "CONTRIBUTION",
-  desc: "Recruiting and staffing agency website. Delivered dashboards for employers to advertise jobs, professionals to upload resumes, and subscribers to manage job loss packages. Also polished UI aesthetics and integrated database connections.",
-  link: "https://tess7llc.com",
-},
+  {
+    name: "iKhono Africa",
+    index: "03",
+    tech: ["PHP", "MySQL", "JavaScript", "HTML/CSS", "REST APIs"],
+    period: "Jan 2026 – Present",
+    badge: "LIVE",
+    desc: "South African home services platform connecting artisans and clients, formalising the minor building works sector. Full platform: service discovery, booking flow, professional profiles, client and admin dashboards, and secure backend endpoints.",
+    link: "https://ikhono.africa",
+  },
+  {
+    name: "Metrolink",
+    index: "04",
+    tech: ["C# .NET 9", "PostgreSQL", "React Native", "Expo", "Railway", "Zustand", "Axios", "SignalR", "REST APIs"],
+    period: "Jan 2026 – Present",
+    badge: "STARTUP",
+    desc: "A Cape Town transit intelligence platform unifying MyCiTi, Metrorail, and Golden Arrow schedules with crowdsourced delay reporting - built on demo APIs as early development, with live agency integration on the roadmap.",
+    link: null,
+  },
+  {
+    name: "TESS7 LLC",
+    index: "05",
+    tech: ["React", "PHP", "MySQL", "JavaScript", "HTML", "CSS"],
+    period: "May 2026 – Present",
+    badge: "CONTRIBUTION",
+    desc: "Recruiting and staffing agency website. Delivered dashboards for employers to advertise jobs, professionals to upload resumes, and subscribers to manage job loss packages. Also polished UI aesthetics and integrated database connections.",
+    link: "https://tess7llc.com",
+  },
 ];
 
 const TIMELINE = [
