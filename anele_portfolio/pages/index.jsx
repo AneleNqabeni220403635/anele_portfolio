@@ -314,7 +314,7 @@ function EkasiCard() {
           href="https://github.com/Aceman-dev/ekasiboard"
           target="_blank"
           rel="noreferrer"
-          style={{ flex: 1, padding: '8px 12px', border: '1px solid #0d1a36', color: '#9db9da', fontSize: '9px', fontFamily: "'Syne', sans-serif", letterSpacing: '0.15em', textTransform: 'uppercase', textDecoration: 'none', textAlign: 'center', transition: 'border-color 0.15s, color 0.15s' }}
+          style={{ flex: 1, padding: '8px 12px', border: '1px solid #0d1a36', borderRadius: '9999px', color: '#9db9da', fontSize: '9px', fontFamily: "'Syne', sans-serif", letterSpacing: '0.15em', textTransform: 'uppercase', textDecoration: 'none', textAlign: 'center', transition: 'border-color 0.15s, color 0.15s' }}
           onMouseEnter={e => { e.currentTarget.style.borderColor = '#22d3ee55'; e.currentTarget.style.color = '#22d3ee'; }}
           onMouseLeave={e => { e.currentTarget.style.borderColor = '#0d1a36'; e.currentTarget.style.color = '#9db9da'; }}
         >
@@ -324,7 +324,7 @@ function EkasiCard() {
           href="https://ekasiboard.vercel.app"
           target="_blank"
           rel="noreferrer"
-          style={{ flex: 1, padding: '8px 12px', border: '1px solid #22d3ee', background: 'rgba(34,211,238,0.08)', color: '#22d3ee', fontSize: '9px', fontFamily: "'Syne', sans-serif", letterSpacing: '0.15em', textTransform: 'uppercase', textDecoration: 'none', textAlign: 'center', transition: 'background 0.15s, color 0.15s' }}
+          style={{ flex: 1, padding: '8px 12px', border: '1px solid #22d3ee', background: 'rgba(34,211,238,0.08)', borderRadius: '9999px', color: '#22d3ee', fontSize: '9px', fontFamily: "'Syne', sans-serif", letterSpacing: '0.15em', textTransform: 'uppercase', textDecoration: 'none', textAlign: 'center', transition: 'background 0.15s, color 0.15s' }}
           onMouseEnter={e => { e.currentTarget.style.background = '#22d3ee'; e.currentTarget.style.color = '#000'; }}
           onMouseLeave={e => { e.currentTarget.style.background = 'rgba(34,211,238,0.08)'; e.currentTarget.style.color = '#22d3ee'; }}
         >
@@ -403,7 +403,7 @@ function ProjectCard({ project, index }) {
       <p style={{ fontSize: "12px", color: "#97b1d2", lineHeight: 1.85, fontWeight: 300, flex: 1 }}>{project.desc}</p>
       {project.link && (
         <a href={project.link} target="_blank" rel="noreferrer"
-          style={{ alignSelf: "flex-start", padding: "8px 16px", border: "1px solid #22d3ee", color: "#22d3ee", fontSize: "8px", fontFamily: "'Syne', sans-serif", letterSpacing: "0.2em", textTransform: "uppercase", textDecoration: "none", transition: "all 0.15s" }}
+          style={{ alignSelf: "flex-start", padding: "8px 16px", border: "1px solid #22d3ee", borderRadius: "9999px", color: "#22d3ee", fontSize: "8px", fontFamily: "'Syne', sans-serif", letterSpacing: "0.2em", textTransform: "uppercase", textDecoration: "none", transition: "all 0.15s" }}
           onMouseEnter={(e) => { e.currentTarget.style.background = "#22d3ee"; e.currentTarget.style.color = "#000"; }}
           onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#22d3ee"; }}>
           Visit /&gt;
@@ -452,7 +452,7 @@ function Nav() {
         </div>
         <a
           href="/Anele-Nqabeni-Resume.pdf.pdf" download
-          style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", letterSpacing: "0.2em", textTransform: "uppercase", padding: "8px 16px", border: "1px solid rgba(34,211,238,0.4)", color: "#22d3ee", textDecoration: "none", transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s", display: "inline-flex", alignItems: "center", gap: "6px", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
+          style={{ fontFamily: "'Syne', sans-serif", fontSize: "9px", letterSpacing: "0.2em", textTransform: "uppercase", padding: "8px 16px", border: "1px solid rgba(34,211,238,0.4)", borderRadius: "9999px", color: "#22d3ee", textDecoration: "none", transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s", display: "inline-flex", alignItems: "center", gap: "6px", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
           onMouseEnter={(e) => { e.currentTarget.style.background = "#22d3ee"; e.currentTarget.style.color = "#020617"; e.currentTarget.style.borderColor = "#22d3ee"; e.currentTarget.style.boxShadow = "0 0 16px rgba(34,211,238,0.3)"; }}
           onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#22d3ee"; e.currentTarget.style.borderColor = "rgba(34,211,238,0.4)"; e.currentTarget.style.boxShadow = "0 0 0 0 rgba(34,211,238,0)"; }}
         >
@@ -647,7 +647,7 @@ export default function Home() {
                 <motion.button
                   onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
                   whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-                  style={{ padding: "13px 28px", background: "#22d3ee", color: "#020617", fontSize: "10px", fontFamily: "'Syne', sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #22d3ee", cursor: "pointer", fontWeight: 600, transition: "background 0.2s, color 0.2s, box-shadow 0.2s", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
+                  style={{ padding: "13px 28px", background: "#22d3ee",borderRadius: "9999px", color: "#020617", fontSize: "10px", fontFamily: "'Syne', sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #22d3ee", cursor: "pointer", fontWeight: 600, transition: "background 0.2s, color 0.2s, box-shadow 0.2s", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#22d3ee"; e.currentTarget.style.boxShadow = "0 0 18px rgba(34,211,238,0.25)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = "#22d3ee"; e.currentTarget.style.color = "#020617"; e.currentTarget.style.boxShadow = "0 0 0 0 rgba(34,211,238,0)"; }}
                 >
@@ -656,7 +656,7 @@ export default function Home() {
                 <motion.a
                   href="/Anele-Nqabeni-Resume.pdf.pdf" download
                   whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-                  style={{ padding: "13px 28px", background: "transparent", color: "#22d3ee", fontSize: "10px", fontFamily: "'Syne', sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(34,211,238,0.4)", cursor: "pointer", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
+                  style={{ padding: "13px 28px", background: "transparent",borderRadius: "9999px", color: "#22d3ee", fontSize: "10px", fontFamily: "'Syne', sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(34,211,238,0.4)", cursor: "pointer", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", transition: "background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s", boxShadow: "0 0 0 0 rgba(34,211,238,0)" }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(34,211,238,0.08)"; e.currentTarget.style.borderColor = "#22d3ee"; e.currentTarget.style.boxShadow = "0 0 18px rgba(34,211,238,0.18)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "rgba(34,211,238,0.4)"; e.currentTarget.style.boxShadow = "0 0 0 0 rgba(34,211,238,0)"; }}
                 >
